@@ -1,0 +1,198 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>SYSTEX</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/style.css" media="screen"/>
+    <link rel="stylesheet" href="../css/print.css" media="print"/>
+    
+    <!-- JS -->
+    <script src="../scripts/jquery-3.5.1.min.js"></script>
+    <!-- <script data-main="scripts/main" src="../js/require.js"></script> -->
+</head>
+<body>
+    <div id="page-3" class="page">
+        <div class="border">
+            <table class="table1 margin" border="1">
+                <tr>
+                    <th style="width:30%; padding: 10px;">公司名稱</th>
+                    <td style="text-align:left;" id="company"></td>
+                </tr>
+                <tr>
+                    <th style="width:30%; padding: 10px;">交付項目</th>
+                    <td style="text-align:left;" id="project"></td>
+                </tr>
+                <tr>
+                    <th style="width:30%; padding: 10px;">維護期間</th>
+                    <td style="text-align:left;" id="period"></td>
+                </tr>
+                <tr>
+                    <th style="width:30%; padding: 30px;">系統名稱(Hostname)</th>
+                    <td style="text-align:left;" id="hostname"></td>
+                </tr>
+            </table>
+            <table class="table1" border="1">
+                <tr>
+                    <th style="width:30%; padding: 10px;">DB 負責人</th>
+                    <td style="text-align:left;" id="db"></td>
+                </tr>
+                <tr>
+                    <th style="width:30%; padding: 10px;">顧問姓名</th>
+                    <td style="text-align:left;" id="consultant"></td>
+                </tr>
+                <tr>
+                    <td colspan="2" id="date" style="padding: 10px; font-size: 22pt;"></td>
+                </tr>
+            </table>
+        </div>   
+    </div>
+    <div id="page-4" class="page">
+        <div class="border">
+            <h1>系統使用空間</h1>
+            <table id="system" class="table2" border="1"></table>
+        </div>
+    </div>
+    <div id="page-5" class="page">
+        <div class="border">
+            <h1>表空間使用報告</h1>
+            <span class="unit">單位(MB)</span>
+            <table id="tablespace" class="table2" border="1"></table>
+        </div>
+    </div>
+    <div id="page-6" class="page">
+        <div class="border">
+            <h1>RMAN備份</h1>
+            <table id="rman" class="table2" border="1"></table>
+        </div>
+    </div>
+    <div id="page-7" class="page">
+        <div class="border">
+            <h1>DataGuard同步機制</h1>
+            <table id="dataguard" class="table2" border="1"></table>
+        </div>
+    </div>
+    <div id="page-8" class="page">
+        <div class="border">
+            <h1>物件狀態異常報告</h1>
+            <p id="messege"></p>
+            <table id="abnormal" class="table2" border="1"></table>
+        </div>
+    </div>
+    <div id="page-9" class="page">
+        <div class="border">
+            <h2>效能分析說明</h2>
+            <table id="effect" class="table2" border="1"></table>
+            <br><span>說明:</span><br>
+            <span>1.若連線數明顯發生成長或區間差距過大，代表資料庫系統可能存在效能問題(如:資料鎖定 Lock wait)，目前連線數差異區間小，表示資料庫運作穩定。</span><br><br>
+            <span>2.根據官方文件目前 Buffer Hit%符合原廠建議值，無須調整。</span>
+            <h2>TOP SQL-請查看Elapsed Time Exec(s)執行較久的語法</h2>
+            <table id="sql" class="table2" border="1"></table>
+        </div>
+    </div>
+    <div id="page-10" class="page">
+        <div class="border">
+            <h1>總結</h1>
+            <span>資料庫問題彙總與上一期比較</span>
+            <table id="comparion" class="table2" border="1">
+                <tr class="header">
+                    <th></th>
+                    <th>Y22<br>第一期</th>
+                    <th>Y22<br>第二期</th>
+                    <th>Y22<br>第一期</th>
+                    <th>Y22<br>第二期</th>
+                    <th>Y22<br>第一期</th>
+                    <th>Y22<br>第二期</th>
+                    <th>Y22<br>第一期</th>
+                    <th>Y22<br>第二期</th>
+                </tr>
+                <tr class="header">
+                    <th style="width:15%">事件</th>
+                    <th colspan="2">物件狀態</th>
+                    <th colspan="2">Dead Lock</th>
+                    <th colspan="2">備份狀態</th>
+                    <th colspan="2">Tablespace狀態</th>
+                </tr>
+                <tr>
+                    <td id="event"><input class="cinput" id="c1" type="text"/></td>
+                    <td id="object1"><input class="cinput" id="c2" type="text"/></td>
+                    <td id="object2"><input class="cinput" id="c3" type="text"/></td>
+                    <td id="lock1"><input class="cinput" id="c4" type="text"/></td>
+                    <td id="lock2"><input class="cinput" id="c5" type="text"/></td>
+                    <td id="copy1"><input class="cinput" id="c6" type="text"/></td>
+                    <td id="copy2"><input class="cinput" id="c7" type="text"/></td>
+                    <td id="space1"><input class="cinput" id="c8" type="text"/></td>
+                    <td id="space2"><input class="cinput" id="c9" type="text"/></td>
+                </tr>
+            </table>
+            <br><span>現況與建議事項</span>
+            <table class="table2" border="1">
+                <tr class="header">
+                    <th>項目</th>
+                    <th style="width:30%">狀況</th>
+                </tr>
+                <tr>
+                    <td>空間配置</td>
+                    <td id="s1"><input class="sinput" id="i1" type="text"/></td>
+                </tr>
+                <tr>
+                    <td>資料庫備份、回復機制</td>
+                    <td id="s2"><input class="sinput" id="i2" type="text"/></td>
+                </tr>
+                <tr>
+                    <td>記憶體效能與效能相關參數設置</td>
+                    <td id="s3"><input class="sinput" id="i3" type="text"/></td>
+                </tr>
+                <tr>
+                    <td>控制檔配置</td>
+                    <td id="s4"><input class="sinput" id="i4" type="text"/></td>
+                </tr>
+                <tr>
+                    <td>重作日誌設定</td>
+                    <td id="s5"><input class="sinput" id="i5" type="text"/></td>
+                </tr>
+                <tr>
+                    <td>Archive log file</td>
+                    <td id="s6"><input class="sinput" id="i6" type="text"/></td>
+                </tr>
+                <tr>
+                    <td>剩餘空間</td>
+                    <td id="s7"><input class="sinput" id="i7" type="text"/></td>
+                </tr>
+                <tr>
+                    <td>暫存空間設定</td>
+                    <td id="s8"><input class="sinput" id="i8" type="text"/></td>
+                </tr>
+                <tr>
+                    <td>表格與索引分析狀況</td>
+                    <td id="s9"><input class="sinput" id="i9" type="text"/></td>
+                </tr>
+                <tr>
+                    <td>物件狀態</td>
+                    <td id="s10"><input class="sinput" id="i10" type="text"/></td>
+                </tr>
+                <tr>
+                    <td>資料庫內定期作業</td>
+                    <td id="s11"><input class="sinput" id="i11" type="text"/></td>
+                </tr>
+                <tr>
+                    <td>權限設定</td>
+                    <td id="s12"><input class="sinput" id="i12" type="text"/></td>
+                </tr>
+                <tr>
+                    <td>SQL 與相關Log file</td>
+                    <td id="s13"><input class="sinput" id="i13" type="text"/></td>
+                </tr>
+                <tr>
+                    <td>Alert log error</td>
+                    <td id="s14"><input class="sinput" id="i14" type="text"/></td>
+                </tr>
+            </table>
+        </div>
+        <center><button id="btn">更新</button></center>
+    </div>
+    <script src="../js/index.js"></script>
+    <script type="module" src="../js/json.js"></script>
+</body>
+</html>

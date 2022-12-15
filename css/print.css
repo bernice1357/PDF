@@ -1,0 +1,58 @@
+@page{
+  size: A4;
+  margin: 2cm;
+  orphans:4;
+  widows:2;
+}
+
+body{
+  -webkit-print-color-adjust: exact;
+}
+
+.page{
+  page-break-after: always;
+}
+
+table{
+  margin-right: auto;
+  margin-left: auto;
+  border-collapse:collapse;
+}
+
+.table1{
+  font-size: 20px; 
+  width: 70vw;
+  border: 3px solid #000;
+  text-align: center;
+}
+
+.table2{
+  width: 80vw;
+  border: 2px solid #000;
+}
+
+.margin{
+  margin-bottom: 150px;
+}
+
+.header{
+  background-color:rgb(65, 93, 108) !important;
+  color: white;
+  text-align: center;
+}
+
+.unit{
+  margin-left: 75%;
+}
+
+h1{
+  font-size: 20pt;
+  font-style: italic;
+  text-decoration: underline double;
+}
+
+h2{
+  font-size: 18pt;
+  font-style: italic;
+  text-decoration: underline double;
+}

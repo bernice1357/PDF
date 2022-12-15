@@ -1,0 +1,156 @@
+{
+  "reportinfo":{ 
+    "company": "台灣大哥大股份有限公司",
+    "project":"第二期顧問服務報告",
+    "period":"111年7月1日~111年9月30日",
+    "hostname":"IDM (idmptdb2)"
+  },
+  "two":{
+    "db":"黃俊清 Jiffy",
+    "consultant":"張正憲 / 黃慶庭",
+    "date":"中 華 民 國 111 年 9 月"
+  },
+  "system":[
+    {
+      "file":"devtmpfs",
+      "size":"32G",
+      "used":"0",
+      "avail":"32G",
+      "percent":"0%",
+      "mounted":"/dev"
+    },
+    {
+      "file":"tmpfs",
+      "size":"32G",
+      "used":"0",
+      "avail":"32G",
+      "percent":"0%",
+      "mounted":"/dev/shm"
+    }
+  ],
+  "tablespace":[
+    {
+      "name":"TS_RES",
+      "size":"16384",
+      "used":"7280",
+      "free":"9104",
+      "maxsize":"65536",
+      "percent":"11.11"
+    },
+    {
+      "name":"SYSAUX",
+      "size":"5510",
+      "used":"1921",
+      "free":"3589",
+      "maxsize":"32768",
+      "percent":"5.86"
+    },
+    {
+      "name":"TS_RES",
+      "size":"16384",
+      "used":"7280",
+      "free":"9104",
+      "maxsize":"65536",
+      "percent":"11.11"
+    }
+  ],
+  "rman":[
+    {
+      "date":"2022/08/30 01:30:02",
+      "status":"COMPLETED"
+    },
+    {
+      "date":"2022/08/30 01:30:03",
+      "status":"COMPLETED"
+    },
+    {
+      "date":"2022/09/01 01:30:03",
+      "status":"COMPLETED"
+    }
+  ],
+  "guard":[
+    {
+      "thread":"1",
+      "dest":"1",
+      "applied":"NO",
+      "sequence":"4314",
+      "time":"9/13/2022 9:50"
+    },
+    {
+      "thread":"1",
+      "dest":"2",
+      "applied":"YES",
+      "sequence":"4314",
+      "time":"9/13/2022 9:50"
+    }
+  ],
+  "exception":[
+    {
+      "owner":"1",
+      "name":"1",
+      "type":"1",
+      "status":"1"
+    },
+    {
+      "owner":"1",
+      "name":"1",
+      "type":"1",
+      "status":"1"
+    }
+  ],
+  "efficacy":[
+    {
+      "item":"Session連線數",
+      "num":"228-251",
+      "status":"運作正常"
+    },
+    {
+      "item":"Buffer Hit%",
+      "num":"99",
+      "status":"效能良好"
+    }
+  ],
+  "sql":[
+    {
+      "time":"574178",
+      "exec":"189",
+      "elap":"3037.98",
+      "id":"4xm1ruvkx3awx",
+      "text":"DECLARE job BINARY_INTEGER := ..."
+    },
+    {
+      "time":"56372",
+      "exec":"128",
+      "elap":"440.41",
+      "id":"14kn6v4gsqhzd",
+      "text":"begin DELETE_ACK_LOG(); end; ..."
+    }
+  ],
+  "comparion":{
+    "event":"IDMPTDB1",
+    "object1":"正常",
+    "object2":"正常",
+    "lock1":"正常",
+    "lock2":"正常",
+    "copy1":"正常",
+    "copy2":"正常",
+    "space1":"正常",
+    "space2":"正常"
+  },
+  "suggestion":{
+    "s1":"正常",
+    "s2":"正常",
+    "s3":"正常",
+    "s4":"正常",
+    "s5":"正常",
+    "s6":"正常",
+    "s7":"正常",
+    "s8":"正常",
+    "s9":"正常",
+    "s10":"正常",
+    "s11":"正常",
+    "s12":"正常",
+    "s13":"正常",
+    "s14":"正常"
+  }
+}
