@@ -11,8 +11,57 @@
     <!-- JS -->
     <script src="../scripts/jquery-3.5.1.min.js"></script>
     <!-- <script data-main="scripts/main" src="../js/require.js"></script> -->
+
+    <!-- JSON -->
+    <script type="text/javascript" src="../json/index.json"></script>
 </head>
 <body>
+    <button id="btn">更新</button>
+    <div id="page-1" class="page">
+        <div class="border">
+            <table class="table1 margin" border="1">
+                <tr>
+                    <th style="width:30%; padding: 10px;">公司名稱</th>
+                    <td style="text-align:left;" id="company"></td>
+                </tr>
+                <tr>
+                    <th style="width:30%; padding: 10px;">交付項目</th>
+                    <td style="text-align:left;" id="project"></td>
+                </tr>
+                <tr>
+                    <th style="width:30%; padding: 10px;">維護期間</th>
+                    <td style="text-align:left;" id="period"></td>
+                </tr>
+                <tr>
+                    <th style="width:30%; padding: 30px;">系統名稱(Hostname)</th>
+                    <td style="text-align:left;" id="hostname"></td>
+                </tr>
+            </table>
+            <table class="table1" border="1">
+                <tr>
+                    <th style="width:30%; padding: 10px;">DB 負責人</th>
+                    <td style="text-align:left;" id="db"></td>
+                </tr>
+                <tr>
+                    <th style="width:30%; padding: 10px;">顧問姓名</th>
+                    <td style="text-align:left;" id="consultant"></td>
+                </tr>
+                <tr>
+                    <td colspan="2" id="date" style="padding: 10px; font-size: 22pt;"></td>
+                </tr>
+            </table>
+        </div>   
+    </div>
+    <div id="page-2" class="page">
+        <div class="border">
+            <div>
+                <input type="file" id="upload" name="image_uploads" accept=".jpg, .jpeg, .png"   style="position:absolute;height:320px;width:550px;">
+            </div>
+            <div class="preview" >
+                <p style="line-height: 50px;">點擊上傳簽名檔</p>
+            </div>
+        </div>
+    </div>
     <div id="page-3" class="page">
         <div class="border">
             <table class="table1 margin" border="1">
@@ -51,44 +100,96 @@
     <div id="page-4" class="page">
         <div class="border">
             <h1>系統使用空間</h1>
-            <table id="system" class="table2" border="1"></table>
+            <table id="system" class="table2" border="1">
+                <tr class="header">
+                    <th>Filesystem</th>
+                    <th>Size</th>
+                    <th>Used</th>
+                    <th>Avail</th>
+                    <th>Use%</th>
+                    <th>Mounted</th>
+                </tr>
+            </table>
         </div>
     </div>
     <div id="page-5" class="page">
         <div class="border">
             <h1>表空間使用報告</h1>
             <span class="unit">單位(MB)</span>
-            <table id="tablespace" class="table2" border="1"></table>
+            <table id="tablespace" class="table2" border="1">
+                <tr class="header">
+                    <th>Tablespace</th>
+                    <th>CurrentSize</th>
+                    <th>Used</th>
+                    <th>Free</th>
+                    <th>MaxSize</th>
+                    <th>Used%</th>
+                </tr>
+            </table>
         </div>
     </div>
     <div id="page-6" class="page">
         <div class="border">
             <h1>RMAN備份</h1>
-            <table id="rman" class="table2" border="1"></table>
+            <table id="rman" class="table2" border="1">
+                <tr class="header">
+                    <th>DATE</th>
+                    <th>STATUS</th>
+                </tr>
+            </table>
         </div>
     </div>
     <div id="page-7" class="page">
         <div class="border">
             <h1>DataGuard同步機制</h1>
-            <table id="dataguard" class="table2" border="1"></table>
+            <table id="dataguard" class="table2" border="1">
+                <tr class="header">
+                    <th>THREAD#</th>
+                    <th>DEST_ID</th>
+                    <th>APPLIED</th>
+                    <th>SEQUENCE#</th>
+                    <th>TIME</th>
+                </tr>
+            </table>
         </div>
     </div>
     <div id="page-8" class="page">
         <div class="border">
             <h1>物件狀態異常報告</h1>
             <p id="messege"></p>
-            <table id="abnormal" class="table2" border="1"></table>
+            <table id="exception" class="table2" border="1">
+                <tr class="header">
+                    <th>Owner</th>
+                    <th>Object Name</th>
+                    <th>Object Type</th>
+                    <th>Status</th>
+                </tr>
+            </table>
         </div>
     </div>
     <div id="page-9" class="page">
         <div class="border">
             <h2>效能分析說明</h2>
-            <table id="effect" class="table2" border="1"></table>
+            <table id="effect" class="table2" border="1">
+                <tr class="header">
+                    <th>項目</th>
+                    <th>數值</th>
+                    <th>狀態</th>
+                </tr>
+            </table>
             <br><span>說明:</span><br>
             <span>1.若連線數明顯發生成長或區間差距過大，代表資料庫系統可能存在效能問題(如:資料鎖定 Lock wait)，目前連線數差異區間小，表示資料庫運作穩定。</span><br><br>
             <span>2.根據官方文件目前 Buffer Hit%符合原廠建議值，無須調整。</span>
             <h2>TOP SQL-請查看Elapsed Time Exec(s)執行較久的語法</h2>
-            <table id="sql" class="table2" border="1"></table>
+            <table id="sql" class="table2" border="1">
+                <tr class="header">
+                    <th>Elapsed Time(s)</th>
+                    <th>Execution</th>
+                    <th>Elap per Exec(s)</th>
+                    <th>SQL Id</th>
+                    <th>SQL Text</th>
+                </tr>
+            </table>
         </div>
     </div>
     <div id="page-10" class="page">
@@ -190,9 +291,9 @@
                 </tr>
             </table>
         </div>
-        <center><button id="btn">更新</button></center>
     </div>
     <script src="../js/index.js"></script>
-    <script type="module" src="../js/json.js"></script>
+    <script type="module" src="../js/edit.js"></script>
+    <script type="module" src="../js/upload.js"></script>
 </body>
 </html>
