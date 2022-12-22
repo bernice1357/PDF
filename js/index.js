@@ -15,7 +15,8 @@ for(var i in mul){
 //DataGuard同步機制
 for(var row in info.dataguard){
   var parent = document.createElement('tr');
-  for(var col in info.dataguard[row]){//每欄
+  //每欄
+  for(var col in info.dataguard[row]){
     var child = document.createElement('td');
     if(col!=='date'){
       child.innerHTML = info.dataguard[row][col];
@@ -45,13 +46,12 @@ for(var item in info.suggestion){
   $('#'+item+'> input').val(info.suggestion[item]);
 }
 
-//第三頁表格二
-for(var item in info.two){
-  $('#'+item).text(info.two[item]);
-}
+// //第三頁表格二
+// for(var item in info.two){
+//   $('#'+item).text(info.two[item]);
+// }
 
-//第三頁表格一
-for(var item in info.reportinfo){
-  $('#'+item).text(info.reportinfo[item]);
-}
-
+// //第三頁表格一
+// for(var item in info.reportinfo){
+//   $('#'+item).text(info.reportinfo[item]);
+// }

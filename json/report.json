@@ -1,0 +1,352 @@
+var report = {
+    "all_report_info": {
+        "company": "台灣大哥大股份有限公司",
+        "project": "第二期顧問服務報告",
+        "period": "111年7月1日~111年9月30日",
+        "hostname": [
+            "NMS (nmsdb02)"
+        ],
+        "db": "Dennis 黃室儒",
+        "consultant": "張正憲 / 黃慶庭",
+        "date": "中 華 民 國 111 年 9 月"
+    },
+    "reports": [
+        {
+            "reportinfo": {
+                "company": "台灣大哥大股份有限公司",
+                "project": "第二期顧問服務報告",
+                "period": "111年7月1日~111年9月30日",
+                "hostname": "DISPATCH (dispatchdb01)",
+                "db": "Dennis 黃室儒",
+                "consultant": "張正憲 / 黃慶庭",
+                "date": "中 華 民 國 111 年 9 月"
+            },
+            "system": [
+                {
+                    "file": "/dev/mapper/vg_dispatchdb01-LogVol01",
+                    "size": "144G",
+                    "used": "87G",
+                    "avail": "51G",
+                    "percent": "64%",
+                    "mounted": "/"
+                },
+                {
+                    "file": "tmpfs",
+                    "size": "63G",
+                    "used": "52M",
+                    "avail": "63G",
+                    "percent": "1%",
+                    "mounted": "/dev/shm"
+                },
+                {
+                    "file": "/dev/sda2",
+                    "size": "477M",
+                    "used": "42M",
+                    "avail": "410M",
+                    "percent": "10%",
+                    "mounted": "/boot"
+                },
+                {
+                    "file": "/dev/sda1",
+                    "size": "500M",
+                    "used": "280K",
+                    "avail": "500M",
+                    "percent": "1%",
+                    "mounted": "/boot/efi"
+                },
+                {
+                    "file": "/dev/mapper/vg_dispatchdb01-LogVol00",
+                    "size": "99G",
+                    "used": "41G",
+                    "avail": "53G",
+                    "percent": "44%",
+                    "mounted": "/oracle"
+                },
+                {
+                    "file": "/dev/mapper/dispatch_data-lvol0",
+                    "size": "1.3T",
+                    "used": "894G",
+                    "avail": "407G",
+                    "percent": "69%",
+                    "mounted": "/dispatch_data"
+                },
+                {
+                    "file": "/dev/mapper/dispatch_redo-lvol0",
+                    "size": "15G",
+                    "used": "5.6G",
+                    "avail": "9.5G",
+                    "percent": "37%",
+                    "mounted": "/dispatch_redo"
+                },
+                {
+                    "file": "/dev/mapper/dispatch_dump-lvol0",
+                    "size": "300G",
+                    "used": "521M",
+                    "avail": "300G",
+                    "percent": "1%",
+                    "mounted": "/dispatch_dump"
+                },
+                {
+                    "file": "10.32.1.32:/backup/6140_FC1/dispatch",
+                    "size": "1.1T",
+                    "used": "469G",
+                    "avail": "636G",
+                    "percent": "43%",
+                    "mounted": "/DATAPUMP"
+                },
+                {
+                    "file": "10.32.1.32:/backup/HUSVM_V1/BackupDB/dispatch",
+                    "size": "2.5T",
+                    "used": "1.3T",
+                    "avail": "1.2T",
+                    "percent": "52%",
+                    "mounted": "/mnt/dispatch"
+                }
+            ],
+            "tablespace": [
+                {
+                    "name": "NEWOM",
+                    "size": "404636",
+                    "used": "374493",
+                    "free": "30143",
+                    "maxsize": "484071",
+                    "percent": "77.36"
+                },
+                {
+                    "name": "AUDIT_TBS",
+                    "size": "19196",
+                    "used": "18240",
+                    "free": "956",
+                    "maxsize": "26480",
+                    "percent": "68.88"
+                },
+                {
+                    "name": "OEMSDB",
+                    "size": "10848",
+                    "used": "6965",
+                    "free": "3883",
+                    "maxsize": "10848",
+                    "percent": "64.21"
+                },
+                {
+                    "name": "OEMSIDX",
+                    "size": "3848",
+                    "used": "2709",
+                    "free": "1139",
+                    "maxsize": "5048",
+                    "percent": "53.67"
+                },
+                {
+                    "name": "OEMSRAW",
+                    "size": "61180",
+                    "used": "41881",
+                    "free": "19299",
+                    "maxsize": "79720",
+                    "percent": "52.54"
+                },
+                {
+                    "name": "NMS",
+                    "size": "11796",
+                    "used": "10116",
+                    "free": "1680",
+                    "maxsize": "20480",
+                    "percent": "49.39"
+                },
+                {
+                    "name": "NEWOMIDX_1M",
+                    "size": "11460",
+                    "used": "5325",
+                    "free": "6135",
+                    "maxsize": "11540",
+                    "percent": "46.14"
+                },
+                {
+                    "name": "SYSAUX",
+                    "size": "4160",
+                    "used": "3476",
+                    "free": "684",
+                    "maxsize": "10000",
+                    "percent": "34.76"
+                },
+                {
+                    "name": "OE1M",
+                    "size": "4000",
+                    "used": "1286",
+                    "free": "2714",
+                    "maxsize": "4000",
+                    "percent": "32.15"
+                },
+                {
+                    "name": "CHIPIN",
+                    "size": "13506",
+                    "used": "10594",
+                    "free": "2912",
+                    "maxsize": "34828",
+                    "percent": "30.42"
+                },
+                {
+                    "name": "DEPT",
+                    "size": "310",
+                    "used": "287",
+                    "free": "23",
+                    "maxsize": "1024",
+                    "percent": "28.02"
+                },
+                {
+                    "name": "MRTG",
+                    "size": "16048",
+                    "used": "9987",
+                    "free": "6061",
+                    "maxsize": "38000",
+                    "percent": "26.28"
+                },
+                {
+                    "name": "AUDIT_DATA",
+                    "size": "4706",
+                    "used": "4482",
+                    "free": "224",
+                    "maxsize": "32767",
+                    "percent": "13.68"
+                },
+                {
+                    "name": "OSS",
+                    "size": "3184",
+                    "used": "845",
+                    "free": "2339",
+                    "maxsize": "6644",
+                    "percent": "12.71"
+                },
+                {
+                    "name": "OSSIDX",
+                    "size": "2948",
+                    "used": "767",
+                    "free": "2181",
+                    "maxsize": "6144",
+                    "percent": "12.48"
+                }
+            ],
+            "rman": [],
+            "guard": [],
+            "exception": [],
+            "session": [
+                {
+                    "date": "2022/09/06 09:00:06",
+                    "sessions": "sessions",
+                    "min": "899",
+                    "max": "1315"
+                },
+                {
+                    "date": "2022/09/13 08:00:47",
+                    "sessions": "sessions",
+                    "min": "606",
+                    "max": "1315"
+                }
+            ],
+            "buffer_hit": [
+                {
+                    "date": "2022/09/13",
+                    "num": "89"
+                }
+            ],
+            "sql": [
+                {
+                    "time": "16828",
+                    "exec": "1",
+                    "elap": "16827.65",
+                    "id": "8u1trs1ztc4d1",
+                    "text": "SELECT   ssi.vpn_group_seq, mp..."
+                },
+                {
+                    "time": "14688",
+                    "exec": "503",
+                    "elap": "29.2",
+                    "id": "9hs3jpdt1wxvg",
+                    "text": " select * from ( with c as ((s..."
+                },
+                {
+                    "time": "13267",
+                    "exec": "254839",
+                    "elap": ".05",
+                    "id": "5yv7yvjgjxugg",
+                    "text": "select TIME_WAITED_MICRO from ..."
+                },
+                {
+                    "time": "8100",
+                    "exec": "7498329",
+                    "elap": "0",
+                    "id": "cxdqcbhhragzr",
+                    "text": "begin    if(user in ('NEWOM','..."
+                },
+                {
+                    "time": "7279",
+                    "exec": "11736",
+                    "elap": ".62",
+                    "id": "fhf8upax5cxsz",
+                    "text": "BEGIN sys.dbms_auto_report_int..."
+                },
+                {
+                    "time": "7124",
+                    "exec": "12485",
+                    "elap": ".57",
+                    "id": "3gpf6pgfqjvjf",
+                    "text": "select sid, subscr_id, type, s..."
+                },
+                {
+                    "time": "7001",
+                    "exec": "10774297",
+                    "elap": "0",
+                    "id": "5jvtx96rjzy2m",
+                    "text": "select functions.GET_REASON_BY..."
+                },
+                {
+                    "time": "6335",
+                    "exec": "5",
+                    "elap": "1267.07",
+                    "id": "8nud1jbst8m52",
+                    "text": "        select account, to_cha..."
+                },
+                {
+                    "time": "5398",
+                    "exec": "950",
+                    "elap": "5.68",
+                    "id": "f2p28t1gc1ghv",
+                    "text": "SELECT *   FROM newom.sv_main ..."
+                },
+                {
+                    "time": "5046",
+                    "exec": "4",
+                    "elap": "1261.58",
+                    "id": "8nud1jbst8m52",
+                    "text": "        select account, to_cha..."
+                }
+            ],
+            "comparison": {
+                "event":"ssssss",
+                "object1": "正常",
+                "object2": "正常",
+                "lock1": "正常",
+                "lock2": "正常",
+                "copy1": "正常",
+                "copy2": "正常",
+                "space1": "正常",
+                "space2": "正常"
+            },
+            "suggestion": {
+                "s1": "正常",
+                "s2": "正常",
+                "s3": "正常",
+                "s4": "正常",
+                "s5": "正常",
+                "s6": "正常",
+                "s7": "正常",
+                "s8": "正常",
+                "s9": "正常",
+                "s10": "正常",
+                "s11": "正常",
+                "s12": "正常",
+                "s13": "正常",
+                "s14": "正常"
+            }
+        }
+    ]
+}
