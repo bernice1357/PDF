@@ -1,24 +1,28 @@
 var input = document.getElementById('upload');
-var preview = document.querySelector('.preview');
 
-input.style.opacity = 0;
-input.addEventListener('change', updateImageDisplay);
-function updateImageDisplay() {
+input.addEventListener('change', function() {
 	while(preview.firstChild) {
+		console.log(1111);
 		preview.removeChild(preview.firstChild);
 	}
 
+	//no uploaded files
 	if(input.files.length === 0) {
-		var para = document.createElement('p');
-		para.textContent = '未選擇任何檔案';
-    para.style="line-height: 300px;";
-		preview.appendChild(para);
+		$('#preview').append($('p').text('未選擇任何檔案'));
 	} 
+	//files uploaded
 	else {
+		console.log(input.files[0].type);
+		if(input.files[0].type.includes('pdf')){
+
+		}else if(input.files[0].type.includes('image')){
+
+		}
+
 		var para = document.createElement('p');
 		var image = document.createElement('img');
 		image.src = window.URL.createObjectURL(input.files[0]);
 		preview.appendChild(image);
 		preview.appendChild(para);
 	}
-}
+});

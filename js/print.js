@@ -2,7 +2,6 @@ $('#export').click(function () {
   window.print();
 })
 
-
 //列印之前
 window.addEventListener('beforeprint', () => {
   var len = report.all_report_info.hostname.length;

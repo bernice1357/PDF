@@ -16,13 +16,13 @@ for(var item=0; item<len; item++){
 
   //第三頁
   var tdElement = `#page-${(8*item+3)} > .border > table > tbody > `;
-  $(tdElement+'.tr-1').append('<td>'+data.reportinfo.company+'</td>');
-  $(tdElement+'.tr-2').append('<td>'+data.reportinfo.project+'</td>');
-  $(tdElement+'.tr-3').append('<td>'+data.reportinfo.period+'</td>');
-  $(tdElement+'.tr-4').append('<td>'+data.reportinfo.hostname+'</td>');
-  $(tdElement+'.tr-5').append('<td>'+data.reportinfo.db+'</td>');
-  $(tdElement+'.tr-6').append('<td>'+data.reportinfo.consultant+'</td>');
-  $(tdElement+'.tr-7').append('<td colspan="2">'+data.reportinfo.date+'</td>');
+  $(tdElement+'.tr-1 > td').text(data.reportinfo.company);
+  $(tdElement+'.tr-2 > td').text(data.reportinfo.project);
+  $(tdElement+'.tr-3 > td').text(data.reportinfo.period);
+  $(tdElement+'.tr-4 > td').text(data.reportinfo.hostname);
+  $(tdElement+'.tr-5 > td').text(data.reportinfo.db);
+  $(tdElement+'.tr-6 > td').text(data.reportinfo.consultant);
+  $(tdElement+'.tr-7 > td').text(data.reportinfo.date);
 
   //多筆資料
   function multiple(tableName, page){
@@ -85,18 +85,43 @@ for(var item=0; item<len; item++){
   //第九頁
 
   //效能分析說明
-  //TODO:等後端確定格式
-  // var tdElement = `#page-${(8*(item)+9)} > .border > .effect > tbody`;
-  // for(var row in data.session){
-  //   var newDiv = document.createElement('tr');
-  //   //每欄
-  //   for(var col in data.session[row]){
-  //     var htmlObject = document.createElement('td');
-  //     htmlObject.innerHTML = data.session[row][col];
-  //     newDiv.appendChild(htmlObject);
-  //   }
-  //   $(tdElement).append(newDiv);
-  // }
+  var tdElement = `#page-${(8*(item)+9)} > .border > .effect > tbody`;
+  //每列
+  for(var row in data.session){
+    var parent = document.createElement('tr');
+
+    var child = document.createElement('td');
+    child.innerHTML = 'Session連線數';
+    parent.appendChild(child);
+
+    var child = document.createElement('td');
+    child.innerHTML = data.session[row].min+'-'+data.session[row].max;
+    parent.appendChild(child);
+
+    var child = document.createElement('td');
+    child.innerHTML = data.session[row].status;
+    parent.appendChild(child);
+
+    $(tdElement).append(parent);
+  }
+  
+  for(var row in data.buffer_hit){
+    var parent = document.createElement('tr');
+
+    var child = document.createElement('td');
+    child.innerHTML = 'Buffer Hit%';
+    parent.appendChild(child);
+
+    var child = document.createElement('td');
+    child.innerHTML = data.buffer_hit[row].num;
+    parent.appendChild(child);
+
+    var child = document.createElement('td');
+    child.innerHTML = data.buffer_hit[row].status;
+    parent.appendChild(child);
+
+    $(tdElement).append(parent);
+  }
 
   //第十頁
 

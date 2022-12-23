@@ -13,7 +13,7 @@
 
     <!-- JSON -->
     <script type="text/javascript" src="./json/report.json"></script>
-    <!-- <script type="text/javascript" src="./json/test.json"></script> -->
+
 </head>
 <body>
     <div class="btnBlock">
@@ -25,71 +25,73 @@
             <table class="table1 margin" border="1">
                 <tr>
                     <th style="width:30%; padding: 10px;">公司名稱</th>
-                    <td style="text-align:left;" id="company"></td>
+                    <td id="company" style="text-align:left;"></td>
                 </tr>
                 <tr>
                     <th style="width:30%; padding: 10px;">交付項目</th>
-                    <td style="text-align:left;" id="project"></td>
+                    <td id="project" style="text-align:left;"></td>
                 </tr>
                 <tr>
                     <th style="width:30%; padding: 10px;">維護期間</th>
-                    <td style="text-align:left;" id="period"></td>
+                    <td id="period" style="text-align:left;"></td>
                 </tr>
                 <tr>
                     <th style="width:30%; padding: 30px;">系統名稱(Hostname)</th>
-                    <td style="text-align:left;" id="hostname"></td>
+                    <td id="hostname" style="text-align:left;"></td>
                 </tr>
             </table>
             <table class="table1" border="1">
                 <tr>
                     <th style="width:30%; padding: 10px;">DB 負責人</th>
-                    <td style="text-align:left;" id="db"></td>
+                    <td id="db" style="text-align:left;"></td>
                 </tr>
                 <tr>
                     <th style="width:30%; padding: 10px;">顧問姓名</th>
-                    <td style="text-align:left;" id="consultant"></td>
+                    <td id="consultant" style="text-align:left;"></td>
                 </tr>
                 <tr>
-                    <td colspan="2" id="date" style="padding: 10px; font-size: 22pt;"></td>
+                    <td id="date" colspan="2" style="padding: 10px; font-size: 22pt;"></td>
                 </tr>
             </table>
         </div>   
     </div>
     <div id="page-2" class="page">
         <div class="border">
-            <div>
-                <input type="file" id="upload" name="image_uploads" accept=".jpg, .jpeg, .png" style="position:absolute;height:320px;width:550px;">
-            </div>
-            <div class="preview">
-                <p style="line-height: 50px;">點擊上傳檔案</p>
-            </div>
+            <input type="file" id="upload" accept=".jpg, .jpeg, .png, .pdf">
+            <p id="preview">點擊上傳檔案</p>
         </div>
     </div>
     <div id="page-3" class="page">
         <div class="border">
             <table class="table1 margin" border="1">
                 <tr class="tr-1">
-                    <th style="width:30%; padding: 10px;">公司名稱</th>
+                    <th style="width:30%; padding: 10px; text-align:left;">公司名稱</th>
+                    <td></td>
                 </tr>
                 <tr class="tr-2">
-                    <th style="width:30%; padding: 10px;">交付項目</th>
+                    <th style="width:30%; padding: 10px; text-align:left;">交付項目</th>
+                    <td></td>
                 </tr>
                 <tr class="tr-3">
-                    <th style="width:30%; padding: 10px;">維護期間</th>
+                    <th style="width:30%; padding: 10px; text-align:left;">維護期間</th>
+                    <td></td>
                 </tr>
                 <tr class="tr-4">
-                    <th style="width:30%; padding: 30px;">系統名稱(Hostname)</th>
+                    <th style="width:30%; padding: 30px; text-align:left;">系統名稱(Hostname)</th>
+                    <td></td>
                 </tr>
             </table>
             <table class="table1" border="1">
                 <tr class="tr-5">
-                    <th style="width:30%; padding: 10px;">DB 負責人</th>
+                    <th style="width:30%; padding: 10px; text-align:left;">DB 負責人</th>
+                    <td></td>
                 </tr>
                 <tr class="tr-6">
-                    <th style="width:30%; padding: 10px;">顧問姓名</th>
+                    <th style="width:30%; padding: 10px; text-align:left;">顧問姓名</th>
+                    <td></td>
                 </tr>
                 <tr class="tr-7">
-                    <!-- <td colspan="2" id="date" style="padding: 10px; font-size: 22pt;"></td> -->
+                    <td colspan="2" style="padding: 10px; font-size: 22pt; text-align:left;"></td>
                 </tr>
             </table>
         </div>   
@@ -289,10 +291,10 @@
             </table>
         </div>
     </div>
-    <script src="./js/copy_pages.js"></script>
-    <script src="./js/first_page.js"></script>
-    <script src="./js/edit.js"></script>
-    <script src="./js/upload_pic.js"></script>
-    <script src="./js/print.js"></script>
 </body>
+<script src="./js/copy_pages.js"></script>
+<script src="./js/first_page.js"></script>
+<script src="./js/edit.js"></script>
+<script src="./js/upload_pic.js"></script>
+<script src="./js/print.js"></script>
 </html>

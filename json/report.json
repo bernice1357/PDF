@@ -16,7 +16,7 @@ var report = {
                 "company": "台灣大哥大股份有限公司",
                 "project": "第二期顧問服務報告",
                 "period": "111年7月1日~111年9月30日",
-                "hostname": "DISPATCH (dispatchdb01)",
+                "hostname": "NMS (nmsdb02)",
                 "db": "Dennis 黃室儒",
                 "consultant": "張正憲 / 黃慶庭",
                 "date": "中 華 民 國 111 年 9 月"
@@ -233,19 +233,22 @@ var report = {
                     "date": "2022/09/06 09:00:06",
                     "sessions": "sessions",
                     "min": "899",
-                    "max": "1315"
+                    "max": "1315",
+                    "status":"運作正常"
                 },
                 {
                     "date": "2022/09/13 08:00:47",
                     "sessions": "sessions",
                     "min": "606",
-                    "max": "1315"
+                    "max": "1315",
+                    "status":"運作正常"
                 }
             ],
             "buffer_hit": [
                 {
                     "date": "2022/09/13",
-                    "num": "89"
+                    "num": "89",
+                    "status":"效能良好"
                 }
             ],
             "sql": [
