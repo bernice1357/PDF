@@ -323,6 +323,12 @@ var report = {
                     "text": "        select account, to_cha..."
                 }
             ],
+            "summaryTitle":{
+                "year1":"Y230",
+                "stage1":"第一期",
+                "year2":"Y26",
+                "stage2":"第二期"
+            },
             "comparison": {
                 "event":"ssssss",
                 "object1": "正常",

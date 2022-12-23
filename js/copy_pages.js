@@ -99,7 +99,7 @@ for(var item=0; item<len; item++){
     parent.appendChild(child);
 
     var child = document.createElement('td');
-    child.innerHTML = data.session[row].status;
+    child.innerHTML = '運作正常';
     parent.appendChild(child);
 
     $(tdElement).append(parent);
@@ -117,7 +117,7 @@ for(var item=0; item<len; item++){
     parent.appendChild(child);
 
     var child = document.createElement('td');
-    child.innerHTML = data.buffer_hit[row].status;
+    child.innerHTML = '效能良好';
     parent.appendChild(child);
 
     $(tdElement).append(parent);
@@ -127,12 +127,23 @@ for(var item=0; item<len; item++){
 
   //資料庫問題彙總與上一期比較
   //每欄
-  var tdElement = `#page-${(8*(item)+10)} > .border > .comparison > tbody > .content > `;
+  var tdElement = `#page-${(8*(item)+10)} > .border > .comparison > tbody`;
+  
+  var parent = document.querySelector(tdElement+'> .comTitle');
+  for(var i=0;i<4;i++){
+    var child = document.createElement('th');
+    child.innerHTML = data.summaryTitle.year1+'<br>'+data.summaryTitle.stage1;
+    parent.appendChild(child);
+
+    var child = document.createElement('th');
+    child.innerHTML = data.summaryTitle.year2+'<br>'+data.summaryTitle.stage2;
+    parent.appendChild(child);
+  }
   for(var col in data.comparison){
     if(col!=="event"){
-      $(tdElement+'.'+col+' > input').val(data.comparison[col]);
+      $(tdElement+' .content > .'+col+' > input').val(data.comparison[col]);
     }else{
-      $(tdElement+'.'+col).text(data.comparison[col]);
+      $(tdElement+' .content > .'+col).text(data.comparison[col]);
     }
   }
 

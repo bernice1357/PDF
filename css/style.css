@@ -4,10 +4,7 @@
 }
 
 .border{
-  margin-right: 50px;
-  margin-left: 50px; 
-  margin-top: 90px;
-  margin-bottom: 90px;
+  margin: 1cm;
 }
 
 .margin{
@@ -16,17 +13,21 @@
 
 #upload{
   position: absolute;
-  height: 950px;
-  width: 700px;
+  height: 1000px;
+  width: 720px;
   opacity: 0;
   background-color: #ffffff;
 }
 
 #preview{
-  font-size: 50px;
-  height: 950px;
+  height: 1050px;
+  width: 720px;
+}
+
+#preview > p{
   text-align: center;
-  line-height: 950px;
+  font-size: 50px;
+  line-height: 1020px;
   border-radius: 10px;
   border: 1px rgb(141, 130, 130) solid;
 }
@@ -97,22 +98,6 @@ p{
 #btn{
   width: 20%;
   font-size: 25px;
-}
-
-.preview {
-  height:auto;
-  text-align:center;
-  background:#ededed;
-  width:150px;
-  text-align:center;
-  z-index:1;
-  top: 20%;
-}
-
-.preview img{
-  width:150px;
-  order:1;
-  vertical-align : middle;
 }
 
 button{
