@@ -10,6 +10,27 @@ for(var item=1; item<len; item++){
   }
 }
 
+//多筆資料
+function multiple(tableName, page){
+  var pageNum = 8*item+page;
+  if(data[tableName].length!==0){
+    //每列
+    for(var row in data[tableName]){
+      var newDiv = document.createElement('tr');
+      //每欄
+      for(var col in data[tableName][row]){
+        var htmlObject = document.createElement('td');
+        htmlObject.innerHTML = data[tableName][row][col];
+        newDiv.appendChild(htmlObject);
+      }
+      var tdElement = `#page-${pageNum} > .border > .${tableName} > tbody`;
+      $(tdElement).append(newDiv);
+    }
+  }else{
+    $(`#page-${pageNum}`).remove();
+  }
+}
+
 //把 json 值塞進表格
 for(var item=0; item<len; item++){
   var data = report.reports[item];
@@ -23,23 +44,6 @@ for(var item=0; item<len; item++){
   $(tdElement+'.tr-5 > td').text(data.reportinfo.db);
   $(tdElement+'.tr-6 > td').text(data.reportinfo.consultant);
   $(tdElement+'.tr-7 > td').text(data.reportinfo.date);
-
-  //多筆資料
-  function multiple(tableName, page){
-    //每列
-    for(var row in data[tableName]){
-      var newDiv = document.createElement('tr');
-      //每欄
-      for(var col in data[tableName][row]){
-        var htmlObject = document.createElement('td');
-        htmlObject.innerHTML = data[tableName][row][col];
-        newDiv.appendChild(htmlObject);
-      }
-      var pageNum = 8*item+page
-      var tdElement = `#page-${pageNum} > .border > .${tableName} > tbody`;
-      $(tdElement).append(newDiv);
-    }
-  }
 
   multiple('system',4);
   multiple('tablespace',5);
@@ -60,76 +64,83 @@ for(var item=0; item<len; item++){
       $(tdElement).append(newDiv);
     }
   }else{
-    document.querySelector(`#page-${8*item+8} > .border > .message`).innerHTML = '無效物件與上期相比並無增加。';
+    $(`#page-${8*item+8}`).remove();
   }
   
   //DataGuard同步機制
-  for(var row in data.dataguard){
-    var parent = document.createElement('tr');
-    //每欄
-    for(var col in data.dataguard[row]){
-      var child = document.createElement('td');
-      if(col!=='date'){
-        child.innerHTML = data.dataguard[row][col];
-        parent.appendChild(child);
-      }else{
-        child.innerHTML = data.dataguard[row].date+' '+data.dataguard[row].time;
-        parent.appendChild(child);
-        break;
+  if(data.dataguard.length!==0){
+    for(var row in data.dataguard){
+      var parent = document.createElement('tr');
+      //每欄
+      for(var col in data.dataguard[row]){
+        var child = document.createElement('td');
+        if(col!=='date'){
+          child.innerHTML = data.dataguard[row][col];
+          parent.appendChild(child);
+        }else{
+          child.innerHTML = data.dataguard[row].date+' '+data.dataguard[row].time;
+          parent.appendChild(child);
+          break;
+        }
       }
+      var tdElement = `#page-${(8*item+7)} > .border > .dataguard > tbody`;
+      $(tdElement).append(parent);
     }
-    var tdElement = `#page-${(8*item+7)} > .border > .dataguard > tbody`;
-    $(tdElement).append(parent);
+  }else{
+    $(`#page-${8*item+7}`).remove();
   }
 
   //第九頁
 
   //效能分析說明
-  var tdElement = `#page-${(8*(item)+9)} > .border > .effect > tbody`;
-  //每列
-  for(var row in data.session){
-    var parent = document.createElement('tr');
+  if(data.session.length!==0 && data.buffer_hit.length!==0){
+    var tdElement = `#page-${(8*(item)+9)} > .border > .effect > tbody`;
+    //每列
+    for(var row in data.session){
+      var parent = document.createElement('tr');
 
-    var child = document.createElement('td');
-    child.innerHTML = 'Session連線數';
-    parent.appendChild(child);
+      var child = document.createElement('td');
+      child.innerHTML = 'Session連線數';
+      parent.appendChild(child);
 
-    var child = document.createElement('td');
-    child.innerHTML = data.session[row].min+'-'+data.session[row].max;
-    parent.appendChild(child);
+      var child = document.createElement('td');
+      child.innerHTML = data.session[row].min+'-'+data.session[row].max;
+      parent.appendChild(child);
 
-    var child = document.createElement('td');
-    child.innerHTML = '運作正常';
-    parent.appendChild(child);
+      var child = document.createElement('td');
+      child.innerHTML = '運作正常';
+      parent.appendChild(child);
 
-    $(tdElement).append(parent);
-  }
-  
-  for(var row in data.buffer_hit){
-    var parent = document.createElement('tr');
+      $(tdElement).append(parent);
+    }
+    
+    for(var row in data.buffer_hit){
+      var parent = document.createElement('tr');
 
-    var child = document.createElement('td');
-    child.innerHTML = 'Buffer Hit%';
-    parent.appendChild(child);
+      var child = document.createElement('td');
+      child.innerHTML = 'Buffer Hit%';
+      parent.appendChild(child);
 
-    var child = document.createElement('td');
-    child.innerHTML = data.buffer_hit[row].num;
-    parent.appendChild(child);
+      var child = document.createElement('td');
+      child.innerHTML = data.buffer_hit[row].num;
+      parent.appendChild(child);
 
-    var child = document.createElement('td');
-    child.innerHTML = '效能良好';
-    parent.appendChild(child);
+      var child = document.createElement('td');
+      child.innerHTML = '效能良好';
+      parent.appendChild(child);
 
-    $(tdElement).append(parent);
+      $(tdElement).append(parent);
+    }
+  }else{
+    $(`#page-${8*item+9}`).remove();
   }
 
   //第十頁
 
   //資料庫問題彙總與上一期比較
-  
   //每欄
   var tdElement = `#page-${(8*(item)+10)} > .border > .comparison > tbody`;
-  
+    
   var parent = document.querySelector(tdElement+'> .comTitle');
   for(var i=0;i<4;i++){
     var child = document.createElement('th');
