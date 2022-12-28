@@ -126,17 +126,18 @@ for(var item=0; item<len; item++){
   //第十頁
 
   //資料庫問題彙總與上一期比較
+  
   //每欄
   var tdElement = `#page-${(8*(item)+10)} > .border > .comparison > tbody`;
   
   var parent = document.querySelector(tdElement+'> .comTitle');
   for(var i=0;i<4;i++){
     var child = document.createElement('th');
-    child.innerHTML = data.summaryTitle.year1+'<br>'+data.summaryTitle.stage1;
+    child.innerHTML = data.summarytitle.year1+'<br>'+data.summarytitle.stage1;
     parent.appendChild(child);
 
     var child = document.createElement('th');
-    child.innerHTML = data.summaryTitle.year2+'<br>'+data.summaryTitle.stage2;
+    child.innerHTML = data.summarytitle.year2+'<br>'+data.summarytitle.stage2;
     parent.appendChild(child);
   }
   for(var col in data.comparison){

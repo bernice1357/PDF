@@ -22,8 +22,7 @@
         <button id="update">更新</button>
         <button id="export">輸出為pdf</button>
     </div>
-    <div id="page-0" class="page">
-        <!-- <button id="show-pdf-button">Show PDF</button> 
+        <button id="show-pdf-button">Show PDF</button> 
         <div id="pdf-main-container">
             <div id="pdf-loader">Loading document ...</div>
             <div id="pdf-contents">
@@ -37,8 +36,8 @@
                 <canvas id="pdf-canvas" width="400"></canvas>
                 <div id="page-loader">Loading page ...</div>
             </div>
-        </div> -->
-    </div>
+        </div>
+    </div> -->
     <div id="page-1" class="page">
         <div class="border">
             <table class="table1 margin" border="1">
@@ -77,10 +76,9 @@
     <div id="page-2" class="page">
         <div class="border">      
             <input type="file" id="upload" accept=".jpg, .jpeg, .png, .pdf">
-            <div id="preview">         
+            <div id="preview">          
                 <p>點擊上傳檔案</p>
-                <!-- <img style="width:720px; height:1050px; display:none"/> -->
-                <canvas id="pdf-canvas" width="400"></canvas>
+                <img style="width:720px; height:1050px; display:none"/>
             </div>
         </div>
     </div>
@@ -307,30 +305,6 @@
         </div>
     </div>
 </body>
-<script>
-    // var input = document.getElementById('upload');
-
-    // input.addEventListener('change', function() {
-    //     //no uploaded files
-    //     if(input.files.length === 0) {
-    //         console.log('no files');
-    //         $('#preview > p').css('display','block');
-    //         $('#preview > img').css('display','none');
-    //     } 
-    //     //files uploaded
-    //     else {
-    //         if(input.files[0].type.includes('pdf')){
-    //             console.log('pdf');
-    //             var loadingTask = PDFJS.getDocument( window.URL.createObjectURL(input.files[0]) );
-    //         }else if(input.files[0].type.includes('image')){
-    //             $('#preview > p').css('display','none');
-    //             $('#preview > img').css('display','block');
-    //             $('#preview > img').attr('src',window.URL.createObjectURL(input.files[0]));
-    //             console.log(input.files);
-    //         }
-    //     }
-    // });
-</script>
 <script src="./js/first_page.js"></script>
 <script src="./js/edit.js"></script>
 <script src="./js/upload.js"></script>

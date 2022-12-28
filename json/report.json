@@ -4,9 +4,13 @@ var report = {
         "project": "第二期顧問服務報告",
         "period": "111年7月1日~111年9月30日",
         "hostname": [
-            "NMS (nmsdb02)"
+            "oss (nwrc3vm4)",
+            "oss (lgcvm4)",
+            "oss (lrc3vm4)",
+            "oss (arc1vm4)",
+            "oss (arc31vm4)"
         ],
-        "db": "Dennis 黃室儒",
+        "db": "Ian Peng ( 彭英樹 )",
         "consultant": "張正憲 / 黃慶庭",
         "date": "中 華 民 國 111 年 9 月"
     },
@@ -16,321 +20,379 @@ var report = {
                 "company": "台灣大哥大股份有限公司",
                 "project": "第二期顧問服務報告",
                 "period": "111年7月1日~111年9月30日",
-                "hostname": "NMS (nmsdb02)",
-                "db": "Dennis 黃室儒",
+                "hostname": "oss (nwrc3vm4)",
+                "db": "Ian Peng ( 彭英樹 )",
                 "consultant": "張正憲 / 黃慶庭",
                 "date": "中 華 民 國 111 年 9 月"
             },
             "system": [
                 {
-                    "file": "/dev/mapper/vg_dispatchdb01-LogVol01",
-                    "size": "144G",
-                    "used": "87G",
-                    "avail": "51G",
-                    "percent": "64%",
+                    "file": "/dev/mapper/rootVG-root",
+                    "size": "34G",
+                    "used": "11G",
+                    "avail": "22G",
+                    "percent": "32%",
                     "mounted": "/"
                 },
                 {
                     "file": "tmpfs",
-                    "size": "63G",
-                    "used": "52M",
-                    "avail": "63G",
-                    "percent": "1%",
+                    "size": "80G",
+                    "used": "0",
+                    "avail": "80G",
+                    "percent": "0%",
                     "mounted": "/dev/shm"
                 },
                 {
-                    "file": "/dev/sda2",
-                    "size": "477M",
-                    "used": "42M",
-                    "avail": "410M",
-                    "percent": "10%",
+                    "file": "/dev/sda1",
+                    "size": "142M",
+                    "used": "70M",
+                    "avail": "65M",
+                    "percent": "53%",
                     "mounted": "/boot"
                 },
                 {
-                    "file": "/dev/sda1",
-                    "size": "500M",
-                    "used": "280K",
-                    "avail": "500M",
+                    "file": "/dev/mapper/rootVG-tmp",
+                    "size": "3.9G",
+                    "used": "8.3M",
+                    "avail": "3.7G",
                     "percent": "1%",
-                    "mounted": "/boot/efi"
+                    "mounted": "/tmp"
                 },
                 {
-                    "file": "/dev/mapper/vg_dispatchdb01-LogVol00",
-                    "size": "99G",
-                    "used": "41G",
-                    "avail": "53G",
-                    "percent": "44%",
-                    "mounted": "/oracle"
-                },
-                {
-                    "file": "/dev/mapper/dispatch_data-lvol0",
-                    "size": "1.3T",
-                    "used": "894G",
-                    "avail": "407G",
-                    "percent": "69%",
-                    "mounted": "/dispatch_data"
-                },
-                {
-                    "file": "/dev/mapper/dispatch_redo-lvol0",
+                    "file": "/dev/mapper/rootVG-var",
                     "size": "15G",
-                    "used": "5.6G",
-                    "avail": "9.5G",
-                    "percent": "37%",
-                    "mounted": "/dispatch_redo"
+                    "used": "5.7G",
+                    "avail": "8.1G",
+                    "percent": "42%",
+                    "mounted": "/var"
                 },
                 {
-                    "file": "/dev/mapper/dispatch_dump-lvol0",
-                    "size": "300G",
-                    "used": "521M",
-                    "avail": "300G",
-                    "percent": "1%",
-                    "mounted": "/dispatch_dump"
+                    "file": "/dev/mapper/vgarc-lvol1",
+                    "size": "3.3T",
+                    "used": "44G",
+                    "avail": "3.3T",
+                    "percent": "2%",
+                    "mounted": "/d/db-arc"
                 },
                 {
-                    "file": "10.32.1.32:/backup/6140_FC1/dispatch",
-                    "size": "1.1T",
-                    "used": "469G",
-                    "avail": "636G",
-                    "percent": "43%",
-                    "mounted": "/DATAPUMP"
+                    "file": "/dev/mapper/vgdb-lvol1",
+                    "size": "2.2T",
+                    "used": "678G",
+                    "avail": "1.6T",
+                    "percent": "31%",
+                    "mounted": "/d/db"
                 },
                 {
-                    "file": "10.32.1.32:/backup/HUSVM_V1/BackupDB/dispatch",
-                    "size": "2.5T",
-                    "used": "1.3T",
-                    "avail": "1.2T",
-                    "percent": "52%",
-                    "mounted": "/mnt/dispatch"
+                    "file": "/dev/mapper/vgredo-lvol1",
+                    "size": "118G",
+                    "used": "26G",
+                    "avail": "93G",
+                    "percent": "22%",
+                    "mounted": "/d/db-redo"
+                },
+                {
+                    "file": "nwrc3vm5:/d/oss/global",
+                    "size": "788G",
+                    "used": "264G",
+                    "avail": "524G",
+                    "percent": "34%",
+                    "mounted": "/d/oss/global"
+                },
+                {
+                    "file": "nwrc3vm5:/home",
+                    "size": "24G",
+                    "used": "17G",
+                    "avail": "7.5G",
+                    "percent": "69%",
+                    "mounted": "/home"
+                },
+                {
+                    "file": "/dev/mapper/vgbackup-lvol1",
+                    "size": "6.3T",
+                    "used": "480G",
+                    "avail": "5.8T",
+                    "percent": "8%",
+                    "mounted": "/backup"
                 }
             ],
             "tablespace": [
                 {
-                    "name": "NEWOM",
-                    "size": "404636",
-                    "used": "374493",
-                    "free": "30143",
-                    "maxsize": "484071",
-                    "percent": "77.36"
-                },
-                {
-                    "name": "AUDIT_TBS",
-                    "size": "19196",
-                    "used": "18240",
-                    "free": "956",
-                    "maxsize": "26480",
-                    "percent": "68.88"
-                },
-                {
-                    "name": "OEMSDB",
-                    "size": "10848",
-                    "used": "6965",
-                    "free": "3883",
-                    "maxsize": "10848",
-                    "percent": "64.21"
-                },
-                {
-                    "name": "OEMSIDX",
-                    "size": "3848",
-                    "used": "2709",
-                    "free": "1139",
-                    "maxsize": "5048",
-                    "percent": "53.67"
-                },
-                {
-                    "name": "OEMSRAW",
-                    "size": "61180",
-                    "used": "41881",
-                    "free": "19299",
-                    "maxsize": "79720",
-                    "percent": "52.54"
-                },
-                {
-                    "name": "NMS",
-                    "size": "11796",
-                    "used": "10116",
-                    "free": "1680",
-                    "maxsize": "20480",
-                    "percent": "49.39"
-                },
-                {
-                    "name": "NEWOMIDX_1M",
-                    "size": "11460",
-                    "used": "5325",
-                    "free": "6135",
-                    "maxsize": "11540",
-                    "percent": "46.14"
+                    "name": "SYSTEM",
+                    "size": "5020",
+                    "used": "4986",
+                    "free": "34",
+                    "maxsize": "32768",
+                    "percent": "15.22"
                 },
                 {
                     "name": "SYSAUX",
-                    "size": "4160",
-                    "used": "3476",
-                    "free": "684",
-                    "maxsize": "10000",
-                    "percent": "34.76"
+                    "size": "5420",
+                    "used": "4974",
+                    "free": "446",
+                    "maxsize": "32768",
+                    "percent": "15.18"
                 },
                 {
-                    "name": "OE1M",
-                    "size": "4000",
-                    "used": "1286",
-                    "free": "2714",
-                    "maxsize": "4000",
-                    "percent": "32.15"
+                    "name": "AOADDL_1",
+                    "size": "15",
+                    "used": "14",
+                    "free": "1",
+                    "maxsize": "100",
+                    "percent": "14.06"
                 },
                 {
-                    "name": "CHIPIN",
-                    "size": "13506",
-                    "used": "10594",
-                    "free": "2912",
-                    "maxsize": "34828",
-                    "percent": "30.42"
+                    "name": "TRC_DB_I_MAIN",
+                    "size": "834",
+                    "used": "258",
+                    "free": "576",
+                    "maxsize": "2048",
+                    "percent": "12.6"
                 },
                 {
-                    "name": "DEPT",
+                    "name": "AOADDL_INDEX_1",
+                    "size": "80",
+                    "used": "11",
+                    "free": "69",
+                    "maxsize": "100",
+                    "percent": "10.56"
+                },
+                {
+                    "name": "SWMDB",
+                    "size": "810",
+                    "used": "776",
+                    "free": "34",
+                    "maxsize": "12500",
+                    "percent": "6.21"
+                },
+                {
+                    "name": "ALSDDL_INDEX_1",
+                    "size": "4945",
+                    "used": "4820",
+                    "free": "125",
+                    "maxsize": "96000",
+                    "percent": "5.02"
+                },
+                {
+                    "name": "OPTDB_1",
+                    "size": "1000",
+                    "used": "825",
+                    "free": "175",
+                    "maxsize": "20000",
+                    "percent": "4.13"
+                },
+                {
+                    "name": "D3BSQL_INDEX_TS",
+                    "size": "16",
+                    "used": "10",
+                    "free": "6",
+                    "maxsize": "256",
+                    "percent": "3.91"
+                },
+                {
+                    "name": "UTPDBM_1",
                     "size": "310",
-                    "used": "287",
-                    "free": "23",
-                    "maxsize": "1024",
-                    "percent": "28.02"
+                    "used": "228",
+                    "free": "82",
+                    "maxsize": "6000",
+                    "percent": "3.8"
                 },
                 {
-                    "name": "MRTG",
-                    "size": "16048",
-                    "used": "9987",
-                    "free": "6061",
-                    "maxsize": "38000",
-                    "percent": "26.28"
+                    "name": "COSDDL_2",
+                    "size": "2642",
+                    "used": "2307",
+                    "free": "335",
+                    "maxsize": "64000",
+                    "percent": "3.6"
                 },
                 {
-                    "name": "AUDIT_DATA",
-                    "size": "4706",
-                    "used": "4482",
-                    "free": "224",
-                    "maxsize": "32767",
-                    "percent": "13.68"
+                    "name": "GIS_1",
+                    "size": "500",
+                    "used": "200",
+                    "free": "300",
+                    "maxsize": "6000",
+                    "percent": "3.33"
                 },
                 {
-                    "name": "OSS",
-                    "size": "3184",
-                    "used": "845",
-                    "free": "2339",
-                    "maxsize": "6644",
-                    "percent": "12.71"
+                    "name": "UTPDBM_INDEX_1",
+                    "size": "650",
+                    "used": "209",
+                    "free": "441",
+                    "maxsize": "6600",
+                    "percent": "3.17"
                 },
                 {
-                    "name": "OSSIDX",
-                    "size": "2948",
-                    "used": "767",
-                    "free": "2181",
-                    "maxsize": "6144",
-                    "percent": "12.48"
+                    "name": "TRC_DB_I_3G",
+                    "size": "5120",
+                    "used": "160",
+                    "free": "4960",
+                    "maxsize": "5120",
+                    "percent": "3.13"
+                },
+                {
+                    "name": "SWMDB_INDEX",
+                    "size": "2000",
+                    "used": "373",
+                    "free": "1627",
+                    "maxsize": "12500",
+                    "percent": "2.98"
                 }
             ],
-            "rman": [],
-            "guard": [],
+            "rman": [
+                {
+                    "date": "2022/11/29 20:03:07",
+                    "status": "COMPLETED"
+                },
+                {
+                    "date": "2022/11/30 20:02:58",
+                    "status": "COMPLETED"
+                },
+                {
+                    "date": "2022/12/01 20:02:52",
+                    "status": "COMPLETED"
+                },
+                {
+                    "date": "2022/12/02 20:03:03",
+                    "status": "COMPLETED"
+                },
+                {
+                    "date": "2022/12/03 20:02:46",
+                    "status": "COMPLETED"
+                },
+                {
+                    "date": "2022/12/04 20:02:56",
+                    "status": "COMPLETED"
+                },
+                {
+                    "date": "2022/12/05 20:02:51",
+                    "status": "COMPLETED"
+                },
+                {
+                    "date": "2022/12/06 20:03:02",
+                    "status": "COMPLETED"
+                },
+                {
+                    "date": "2022/12/07 20:02:53",
+                    "status": "COMPLETED"
+                },
+                {
+                    "date": "2022/12/08 20:03:03",
+                    "status": "COMPLETED"
+                },
+                {
+                    "date": "2022/12/09 20:03:07",
+                    "status": "COMPLETED"
+                },
+                {
+                    "date": "2022/12/10 20:02:54",
+                    "status": "COMPLETED"
+                },
+                {
+                    "date": "2022/12/11 20:02:50",
+                    "status": "COMPLETED"
+                }
+            ],
+            "dataguard": [],
             "exception": [],
             "session": [
                 {
-                    "date": "2022/09/06 09:00:06",
+                    "date": "2022/12/12 08:00:28",
                     "sessions": "sessions",
                     "min": "899",
-                    "max": "1315",
-                    "status":"運作正常"
+                    "max": "1195"
                 },
                 {
-                    "date": "2022/09/13 08:00:47",
+                    "date": "2022/12/05 09:00:32",
                     "sessions": "sessions",
-                    "min": "606",
-                    "max": "1315",
-                    "status":"運作正常"
+                    "min": "897",
+                    "max": "1195"
                 }
             ],
             "buffer_hit": [
                 {
-                    "date": "2022/09/13",
-                    "num": "89",
-                    "status":"效能良好"
+                    "date": "2022/12/12",
+                    "num": "99"
                 }
             ],
             "sql": [
                 {
-                    "time": "16828",
-                    "exec": "1",
-                    "elap": "16827.65",
-                    "id": "8u1trs1ztc4d1",
-                    "text": "SELECT   ssi.vpn_group_seq, mp..."
+                    "time": "14959507",
+                    "exec": "92470422",
+                    "elap": ".16",
+                    "id": "a58h7c56vmfvh",
+                    "text": "DELETE FROM \"COMMON_MEDIATIONS..."
                 },
                 {
-                    "time": "14688",
-                    "exec": "503",
-                    "elap": "29.2",
-                    "id": "9hs3jpdt1wxvg",
-                    "text": " select * from ( with c as ((s..."
-                },
-                {
-                    "time": "13267",
-                    "exec": "254839",
-                    "elap": ".05",
-                    "id": "5yv7yvjgjxugg",
-                    "text": "select TIME_WAITED_MICRO from ..."
-                },
-                {
-                    "time": "8100",
-                    "exec": "7498329",
+                    "time": "393760",
+                    "exec": "3181800933",
                     "elap": "0",
-                    "id": "cxdqcbhhragzr",
-                    "text": "begin    if(user in ('NEWOM','..."
+                    "id": "96g93hntrzjtr",
+                    "text": "select /*+ rule */ bucket_cnt,..."
                 },
                 {
-                    "time": "7279",
-                    "exec": "11736",
-                    "elap": ".62",
-                    "id": "fhf8upax5cxsz",
-                    "text": "BEGIN sys.dbms_auto_report_int..."
-                },
-                {
-                    "time": "7124",
-                    "exec": "12485",
-                    "elap": ".57",
-                    "id": "3gpf6pgfqjvjf",
-                    "text": "select sid, subscr_id, type, s..."
-                },
-                {
-                    "time": "7001",
-                    "exec": "10774297",
+                    "time": "202338",
+                    "exec": "1710032010",
                     "elap": "0",
-                    "id": "5jvtx96rjzy2m",
-                    "text": "select functions.GET_REASON_BY..."
+                    "id": "96g93hntrzjtr",
+                    "text": "select /*+ rule */ bucket_cnt,..."
                 },
                 {
-                    "time": "6335",
-                    "exec": "5",
-                    "elap": "1267.07",
-                    "id": "8nud1jbst8m52",
-                    "text": "        select account, to_cha..."
+                    "time": "167018",
+                    "exec": "1064580650",
+                    "elap": "0",
+                    "id": "62yyzw3309d6a",
+                    "text": "SELECT VALUE FROM V$SESSION_FI..."
                 },
                 {
-                    "time": "5398",
-                    "exec": "950",
-                    "elap": "5.68",
-                    "id": "f2p28t1gc1ghv",
-                    "text": "SELECT *   FROM newom.sv_main ..."
+                    "time": "125343",
+                    "exec": "16933122",
+                    "elap": ".01",
+                    "id": "5pkjgqjxz0kd8",
+                    "text": "BEGIN    dbms_stats.postproces..."
                 },
                 {
-                    "time": "5046",
-                    "exec": "4",
-                    "elap": "1261.58",
-                    "id": "8nud1jbst8m52",
-                    "text": "        select account, to_cha..."
+                    "time": "102683",
+                    "exec": "11908548",
+                    "elap": ".01",
+                    "id": "8utchgj502uu0",
+                    "text": "SELECT * FROM TCMQZ2_LOCKS UPD..."
+                },
+                {
+                    "time": "74487",
+                    "exec": "16957176",
+                    "elap": "0",
+                    "id": "1wz811srf8xh8",
+                    "text": "BEGIN    dbms_stats.gen_selmap..."
+                },
+                {
+                    "time": "70566",
+                    "exec": "450114104",
+                    "elap": "0",
+                    "id": "dmtp4rffuakms",
+                    "text": "select * from ( select /*+ IND..."
+                },
+                {
+                    "time": "54147",
+                    "exec": "187069640",
+                    "elap": "0",
+                    "id": "7umy6juhzw766",
+                    "text": "select /*+ connect_by_filterin..."
+                },
+                {
+                    "time": "52242",
+                    "exec": "114141850",
+                    "elap": "0",
+                    "id": "ct6c4h224pxgz",
+                    "text": "BEGIN   BEGIN     IF (sys.is_v..."
                 }
             ],
-            "summaryTitle":{
-                "year1":"Y230",
-                "stage1":"第一期",
-                "year2":"Y26",
-                "stage2":"第二期"
+            "summarytitle": {
+                "year1": "Y22",
+                "stage1": "第一期",
+                "year2": "Y22",
+                "stage2": "第二期"
             },
             "comparison": {
-                "event":"ssssss",
+                "event": "oss (nwrc3vm4)",
                 "object1": "正常",
                 "object2": "正常",
                 "lock1": "正常",
@@ -355,7 +417,2017 @@ var report = {
                 "s12": "正常",
                 "s13": "正常",
                 "s14": "正常"
-            }
+            },
+            "guard": [
+                {
+                    "thread": "1",
+                    "dest": "1",
+                    "applied": "NO",
+                    "sequence": "39862",
+                    "date": "2022/12/12",
+                    "time": "09:15:45"
+                }
+            ]
+        },
+        {
+            "reportinfo": {
+                "company": "台灣大哥大股份有限公司",
+                "project": "第二期顧問服務報告",
+                "period": "111年7月1日~111年9月30日",
+                "hostname": "oss (lgcvm4)",
+                "db": "Ian Peng ( 彭英樹 )",
+                "consultant": "張正憲 / 黃慶庭",
+                "date": "中 華 民 國 111 年 9 月"
+            },
+            "system": [
+                {
+                    "file": "/dev/mapper/rootVG-root",
+                    "size": "29G",
+                    "used": "13G",
+                    "avail": "15G",
+                    "percent": "47%",
+                    "mounted": "/"
+                },
+                {
+                    "file": "devtmpfs",
+                    "size": "126G",
+                    "used": "0",
+                    "avail": "126G",
+                    "percent": "0%",
+                    "mounted": "/dev"
+                },
+                {
+                    "file": "tmpfs",
+                    "size": "227G",
+                    "used": "0",
+                    "avail": "227G",
+                    "percent": "0%",
+                    "mounted": "/dev/shm"
+                },
+                {
+                    "file": "tmpfs",
+                    "size": "126G",
+                    "used": "4.0G",
+                    "avail": "122G",
+                    "percent": "4%",
+                    "mounted": "/run"
+                },
+                {
+                    "file": "tmpfs",
+                    "size": "126G",
+                    "used": "0",
+                    "avail": "126G",
+                    "percent": "0%",
+                    "mounted": "/sys/fs/cgroup"
+                },
+                {
+                    "file": "/dev/mapper/vgredo-lvol1",
+                    "size": "532G",
+                    "used": "297G",
+                    "avail": "235G",
+                    "percent": "56%",
+                    "mounted": "/d/db-redo"
+                },
+                {
+                    "file": "/dev/sda1",
+                    "size": "142M",
+                    "used": "38M",
+                    "avail": "93M",
+                    "percent": "30%",
+                    "mounted": "/boot"
+                },
+                {
+                    "file": "/dev/mapper/vgdb3-lvol1",
+                    "size": "2.0T",
+                    "used": "707G",
+                    "avail": "1.3T",
+                    "percent": "36%",
+                    "mounted": "/d/db3"
+                },
+                {
+                    "file": "/dev/mapper/vgdb-lvol1",
+                    "size": "1.5T",
+                    "used": "952G",
+                    "avail": "530G",
+                    "percent": "65%",
+                    "mounted": "/d/db"
+                },
+                {
+                    "file": "/dev/mapper/vgdb4-lvol1",
+                    "size": "12T",
+                    "used": "8.0T",
+                    "avail": "3.8T",
+                    "percent": "69%",
+                    "mounted": "/d/db4"
+                },
+                {
+                    "file": "/dev/mapper/vgdb2-lvol1",
+                    "size": "16T",
+                    "used": "13T",
+                    "avail": "3.5T",
+                    "percent": "78%",
+                    "mounted": "/d/db2"
+                },
+                {
+                    "file": "/dev/mapper/rootVG-tmp",
+                    "size": "2.6G",
+                    "used": "4.4M",
+                    "avail": "2.5G",
+                    "percent": "1%",
+                    "mounted": "/tmp"
+                },
+                {
+                    "file": "/dev/mapper/rootVG-var",
+                    "size": "13G",
+                    "used": "5.8G",
+                    "avail": "5.9G",
+                    "percent": "50%",
+                    "mounted": "/var"
+                },
+                {
+                    "file": "/dev/mapper/vgarc-lvol1",
+                    "size": "5.2T",
+                    "used": "1.3T",
+                    "avail": "4.0T",
+                    "percent": "24%",
+                    "mounted": "/d/db-arc"
+                },
+                {
+                    "file": "lgcvm5:/home",
+                    "size": "158G",
+                    "used": "7.2G",
+                    "avail": "151G",
+                    "percent": "5%",
+                    "mounted": "/home"
+                },
+                {
+                    "file": "lgcvm5:/d/oss/global",
+                    "size": "552G",
+                    "used": "89G",
+                    "avail": "463G",
+                    "percent": "17%",
+                    "mounted": "/d/oss/global"
+                },
+                {
+                    "file": "lgcvm5:/d/oss/global/var/globalv4",
+                    "size": "552G",
+                    "used": "89G",
+                    "avail": "463G",
+                    "percent": "17%",
+                    "mounted": "/var/opt/oss/globalv4"
+                },
+                {
+                    "file": "tmpfs",
+                    "size": "26G",
+                    "used": "0",
+                    "avail": "26G",
+                    "percent": "0%",
+                    "mounted": "/run/user/502"
+                },
+                {
+                    "file": "tmpfs",
+                    "size": "26G",
+                    "used": "0",
+                    "avail": "26G",
+                    "percent": "0%",
+                    "mounted": "/run/user/0"
+                },
+                {
+                    "file": "/dev/mapper/vgbackup-lvol1",
+                    "size": "35T",
+                    "used": "29T",
+                    "avail": "6.0T",
+                    "percent": "83%",
+                    "mounted": "/backup"
+                }
+            ],
+            "tablespace": [
+                {
+                    "name": "SQLBC4_INDEX_1",
+                    "size": "1024",
+                    "used": "370",
+                    "free": "654",
+                    "maxsize": "1024",
+                    "percent": "36.13"
+                },
+                {
+                    "name": "SQLBC4_1",
+                    "size": "1024",
+                    "used": "321",
+                    "free": "703",
+                    "maxsize": "1024",
+                    "percent": "31.35"
+                },
+                {
+                    "name": "SYSAUX",
+                    "size": "11310",
+                    "used": "9063",
+                    "free": "2247",
+                    "maxsize": "32768",
+                    "percent": "27.66"
+                },
+                {
+                    "name": "SYSTEM",
+                    "size": "8930",
+                    "used": "8735",
+                    "free": "195",
+                    "maxsize": "32768",
+                    "percent": "26.66"
+                },
+                {
+                    "name": "SPMDDL",
+                    "size": "285696",
+                    "used": "70342",
+                    "free": "215354",
+                    "maxsize": "285696",
+                    "percent": "24.62"
+                },
+                {
+                    "name": "LTERDB_1",
+                    "size": "8434674",
+                    "used": "8087889",
+                    "free": "346785",
+                    "maxsize": "33554432",
+                    "percent": "24.1"
+                },
+                {
+                    "name": "CSCACH",
+                    "size": "49368",
+                    "used": "49293",
+                    "free": "75",
+                    "maxsize": "204800",
+                    "percent": "24.07"
+                },
+                {
+                    "name": "UNDOTBS1",
+                    "size": "262144",
+                    "used": "59652",
+                    "free": "202492",
+                    "maxsize": "262144",
+                    "percent": "22.76"
+                },
+                {
+                    "name": "LTERDB_INDEX_1",
+                    "size": "6225589",
+                    "used": "5908774",
+                    "free": "316815",
+                    "maxsize": "33554432",
+                    "percent": "17.61"
+                },
+                {
+                    "name": "SPMDDL_INDEX",
+                    "size": "285696",
+                    "used": "42583",
+                    "free": "243113",
+                    "maxsize": "285696",
+                    "percent": "14.91"
+                },
+                {
+                    "name": "AOADDL_1",
+                    "size": "15",
+                    "used": "15",
+                    "free": "0",
+                    "maxsize": "100",
+                    "percent": "14.75"
+                },
+                {
+                    "name": "AOADDL_INDEX_1",
+                    "size": "100",
+                    "used": "10",
+                    "free": "90",
+                    "maxsize": "100",
+                    "percent": "10.31"
+                },
+                {
+                    "name": "LTECDB_1",
+                    "size": "3308552",
+                    "used": "2768134",
+                    "free": "540418",
+                    "maxsize": "33554432",
+                    "percent": "8.25"
+                },
+                {
+                    "name": "NIMDBM_INDEX_1",
+                    "size": "3825",
+                    "used": "2227",
+                    "free": "1598",
+                    "maxsize": "32767",
+                    "percent": "6.8"
+                },
+                {
+                    "name": "TRC_DB_I_MAIN",
+                    "size": "2048",
+                    "used": "116",
+                    "free": "1932",
+                    "maxsize": "2048",
+                    "percent": "5.66"
+                }
+            ],
+            "rman": [
+                {
+                    "date": "2022/11/28 20:00:43",
+                    "status": "COMPLETED"
+                },
+                {
+                    "date": "2022/11/29 08:00:50",
+                    "status": "COMPLETED"
+                },
+                {
+                    "date": "2022/11/29 10:16:29",
+                    "status": "COMPLETED"
+                },
+                {
+                    "date": "2022/11/30 20:00:38",
+                    "status": "COMPLETED"
+                },
+                {
+                    "date": "2022/12/01 08:00:18",
+                    "status": "COMPLETED"
+                },
+                {
+                    "date": "2022/12/01 10:08:03",
+                    "status": "COMPLETED"
+                },
+                {
+                    "date": "2022/12/02 20:00:39",
+                    "status": "COMPLETED"
+                },
+                {
+                    "date": "2022/12/03 08:01:01",
+                    "status": "COMPLETED"
+                },
+                {
+                    "date": "2022/12/03 10:09:40",
+                    "status": "COMPLETED"
+                },
+                {
+                    "date": "2022/12/05 20:00:49",
+                    "status": "COMPLETED"
+                },
+                {
+                    "date": "2022/12/06 08:00:43",
+                    "status": "COMPLETED"
+                },
+                {
+                    "date": "2022/12/06 10:17:13",
+                    "status": "COMPLETED"
+                },
+                {
+                    "date": "2022/12/07 20:00:36",
+                    "status": "COMPLETED"
+                },
+                {
+                    "date": "2022/12/08 08:00:48",
+                    "status": "COMPLETED"
+                },
+                {
+                    "date": "2022/12/08 10:07:58",
+                    "status": "COMPLETED"
+                },
+                {
+                    "date": "2022/12/09 20:00:26",
+                    "status": "COMPLETED"
+                },
+                {
+                    "date": "2022/12/10 08:01:28",
+                    "status": "COMPLETED"
+                },
+                {
+                    "date": "2022/12/10 10:08:33",
+                    "status": "COMPLETED"
+                }
+            ],
+            "dataguard": [],
+            "exception": [],
+            "session": [
+                {
+                    "date": "2022/12/05 09:00:31",
+                    "sessions": "sessions",
+                    "min": "976",
+                    "max": "1918"
+                },
+                {
+                    "date": "2022/12/12 08:00:25",
+                    "sessions": "sessions",
+                    "min": "980",
+                    "max": "1918"
+                }
+            ],
+            "buffer_hit": [
+                {
+                    "date": "2022/12/12",
+                    "num": "99"
+                }
+            ],
+            "sql": [
+                {
+                    "time": "2945700",
+                    "exec": "774724",
+                    "elap": "3.8",
+                    "id": "5mgx3qrjw4kn1",
+                    "text": "SELECT /*+ OPT_PARAM('_paralle..."
+                },
+                {
+                    "time": "1679033",
+                    "exec": "763614321",
+                    "elap": "0",
+                    "id": "bunvx480ynf57",
+                    "text": "SELECT 1 FROM DUAL..."
+                },
+                {
+                    "time": "452718",
+                    "exec": "596643",
+                    "elap": ".76",
+                    "id": "fhf8upax5cxsz",
+                    "text": "BEGIN sys.dbms_auto_report_int..."
+                },
+                {
+                    "time": "440619",
+                    "exec": "596590",
+                    "elap": ".74",
+                    "id": "0w26sk6t6gq98",
+                    "text": "SELECT XMLTYPE(DBMS_REPORT.GET..."
+                },
+                {
+                    "time": "302838",
+                    "exec": "1135471336",
+                    "elap": "0",
+                    "id": "bunvx480ynf57",
+                    "text": "SELECT 1 FROM DUAL..."
+                },
+                {
+                    "time": "242959",
+                    "exec": "1565754",
+                    "elap": ".16",
+                    "id": "8utchgj502uu0",
+                    "text": "SELECT * FROM TCMQZ2_LOCKS UPD..."
+                },
+                {
+                    "time": "233996",
+                    "exec": "7012102",
+                    "elap": ".03",
+                    "id": "8ck0xb4zc63md",
+                    "text": "UPDATE TCMPTL.PMSCHED_T_SCHEDU..."
+                },
+                {
+                    "time": "202260",
+                    "exec": "7012054",
+                    "elap": ".03",
+                    "id": "7ur2fc611zvus",
+                    "text": "UPDATE TCMQZ2_SCHEDULER_STATE ..."
+                },
+                {
+                    "time": "176797",
+                    "exec": "10935",
+                    "elap": "16.17",
+                    "id": "d66sha6y2v3g1",
+                    "text": "call DBMS_AQADM_SYS.REMOVE_ORP..."
+                },
+                {
+                    "time": "115751",
+                    "exec": "3629633",
+                    "elap": ".03",
+                    "id": "9zg9qd9bm4spu",
+                    "text": "update user$ set spare6=DECODE..."
+                }
+            ],
+            "summarytitle": {
+                "year1": "Y22",
+                "stage1": "第一期",
+                "year2": "Y22",
+                "stage2": "第二期"
+            },
+            "comparison": {
+                "event": "oss (lgcvm4)",
+                "object1": "正常",
+                "object2": "正常",
+                "lock1": "正常",
+                "lock2": "正常",
+                "copy1": "正常",
+                "copy2": "正常",
+                "space1": "正常",
+                "space2": "正常"
+            },
+            "suggestion": {
+                "s1": "正常",
+                "s2": "正常",
+                "s3": "正常",
+                "s4": "正常",
+                "s5": "正常",
+                "s6": "正常",
+                "s7": "正常",
+                "s8": "正常",
+                "s9": "正常",
+                "s10": "正常",
+                "s11": "正常",
+                "s12": "正常",
+                "s13": "正常",
+                "s14": "正常"
+            },
+            "guard": [
+                {
+                    "thread": "1",
+                    "dest": "1",
+                    "applied": "NO",
+                    "sequence": "17750",
+                    "date": "2022/12/12",
+                    "time": "13:58:31"
+                },
+                {
+                    "thread": "",
+                    "dest": "1",
+                    "applied": "2",
+                    "sequence": "YES",
+                    "date": "17750",
+                    "time": "2022/12/12"
+                }
+            ]
+        },
+        {
+            "reportinfo": {
+                "company": "台灣大哥大股份有限公司",
+                "project": "第二期顧問服務報告",
+                "period": "111年7月1日~111年9月30日",
+                "hostname": "oss (lrc3vm4)",
+                "db": "Ian Peng ( 彭英樹 )",
+                "consultant": "張正憲 / 黃慶庭",
+                "date": "中 華 民 國 111 年 9 月"
+            },
+            "system": [
+                {
+                    "file": "devtmpfs",
+                    "size": "45G",
+                    "used": "0",
+                    "avail": "45G",
+                    "percent": "0%",
+                    "mounted": "/dev"
+                },
+                {
+                    "file": "tmpfs",
+                    "size": "80G",
+                    "used": "0",
+                    "avail": "80G",
+                    "percent": "0%",
+                    "mounted": "/dev/shm"
+                },
+                {
+                    "file": "tmpfs",
+                    "size": "45G",
+                    "used": "4.0G",
+                    "avail": "41G",
+                    "percent": "10%",
+                    "mounted": "/run"
+                },
+                {
+                    "file": "tmpfs",
+                    "size": "45G",
+                    "used": "0",
+                    "avail": "45G",
+                    "percent": "0%",
+                    "mounted": "/sys/fs/cgroup"
+                },
+                {
+                    "file": "/dev/mapper/rootVG-root",
+                    "size": "57G",
+                    "used": "15G",
+                    "avail": "39G",
+                    "percent": "27%",
+                    "mounted": "/"
+                },
+                {
+                    "file": "/dev/sda1",
+                    "size": "142M",
+                    "used": "68M",
+                    "avail": "64M",
+                    "percent": "52%",
+                    "mounted": "/boot"
+                },
+                {
+                    "file": "/dev/mapper/vgredo-lvol1",
+                    "size": "256G",
+                    "used": "111G",
+                    "avail": "146G",
+                    "percent": "44%",
+                    "mounted": "/d/db-redo"
+                },
+                {
+                    "file": "/dev/mapper/vgarc-lvol1",
+                    "size": "3.3T",
+                    "used": "315G",
+                    "avail": "3.0T",
+                    "percent": "10%",
+                    "mounted": "/d/db-arc"
+                },
+                {
+                    "file": "/dev/mapper/rootVG-tmp",
+                    "size": "3.4G",
+                    "used": "7.3M",
+                    "avail": "3.2G",
+                    "percent": "1%",
+                    "mounted": "/tmp"
+                },
+                {
+                    "file": "/dev/mapper/rootVG-var",
+                    "size": "22G",
+                    "used": "14G",
+                    "avail": "7.0G",
+                    "percent": "67%",
+                    "mounted": "/var"
+                },
+                {
+                    "file": "/dev/mapper/vgdb-lvol1",
+                    "size": "2.9T",
+                    "used": "1.9T",
+                    "avail": "987G",
+                    "percent": "66%",
+                    "mounted": "/d/db"
+                },
+                {
+                    "file": "lrc3vm5:/var/datasync",
+                    "size": "788G",
+                    "used": "67M",
+                    "avail": "788G",
+                    "percent": "1%",
+                    "mounted": "/mnt/datasync"
+                },
+                {
+                    "file": "lrc3vm5:/home",
+                    "size": "24G",
+                    "used": "15G",
+                    "avail": "8.9G",
+                    "percent": "63%",
+                    "mounted": "/home"
+                },
+                {
+                    "file": "lrc3vm5:/d/oss/global/var/globalv4",
+                    "size": "1.3T",
+                    "used": "556G",
+                    "avail": "724G",
+                    "percent": "44%",
+                    "mounted": "/var/opt/oss/globalv4"
+                },
+                {
+                    "file": "lrc3vm5:/d/oss/global",
+                    "size": "1.3T",
+                    "used": "556G",
+                    "avail": "724G",
+                    "percent": "44%",
+                    "mounted": "/d/oss/global"
+                },
+                {
+                    "file": "tmpfs",
+                    "size": "8.9G",
+                    "used": "0",
+                    "avail": "8.9G",
+                    "percent": "0%",
+                    "mounted": "/run/user/353"
+                },
+                {
+                    "file": "tmpfs",
+                    "size": "8.9G",
+                    "used": "0",
+                    "avail": "8.9G",
+                    "percent": "0%",
+                    "mounted": "/run/user/502"
+                },
+                {
+                    "file": "tmpfs",
+                    "size": "8.9G",
+                    "used": "0",
+                    "avail": "8.9G",
+                    "percent": "0%",
+                    "mounted": "/run/user/0"
+                },
+                {
+                    "file": "/dev/mapper/vgbackup-lvol1",
+                    "size": "7.8T",
+                    "used": "1.1T",
+                    "avail": "6.8T",
+                    "percent": "14%",
+                    "mounted": "/backup"
+                }
+            ],
+            "tablespace": [
+                {
+                    "name": "COSDDL_2",
+                    "size": "66000",
+                    "used": "39486",
+                    "free": "26514",
+                    "maxsize": "96000",
+                    "percent": "41.13"
+                },
+                {
+                    "name": "TRC_DB_I_MAIN",
+                    "size": "2048",
+                    "used": "808",
+                    "free": "1240",
+                    "maxsize": "2048",
+                    "percent": "39.45"
+                },
+                {
+                    "name": "SQLBC4_1",
+                    "size": "976",
+                    "used": "393",
+                    "free": "583",
+                    "maxsize": "1024",
+                    "percent": "38.38"
+                },
+                {
+                    "name": "TRC_DB_MAIN",
+                    "size": "706",
+                    "used": "646",
+                    "free": "60",
+                    "maxsize": "2048",
+                    "percent": "31.54"
+                },
+                {
+                    "name": "AOADDL_1",
+                    "size": "15",
+                    "used": "15",
+                    "free": "0",
+                    "maxsize": "100",
+                    "percent": "14.69"
+                },
+                {
+                    "name": "SWMDB",
+                    "size": "1790",
+                    "used": "1767",
+                    "free": "23",
+                    "maxsize": "12500",
+                    "percent": "14.14"
+                },
+                {
+                    "name": "AOADDL_INDEX_1",
+                    "size": "85",
+                    "used": "11",
+                    "free": "74",
+                    "maxsize": "100",
+                    "percent": "10.81"
+                },
+                {
+                    "name": "SYSAUX",
+                    "size": "9520",
+                    "used": "6728",
+                    "free": "2792",
+                    "maxsize": "65536",
+                    "percent": "10.27"
+                },
+                {
+                    "name": "SYSTEM",
+                    "size": "6930",
+                    "used": "5730",
+                    "free": "1200",
+                    "maxsize": "65536",
+                    "percent": "8.74"
+                },
+                {
+                    "name": "UNDOTBS1",
+                    "size": "170400",
+                    "used": "21618",
+                    "free": "148782",
+                    "maxsize": "262144",
+                    "percent": "8.25"
+                },
+                {
+                    "name": "ALSDDL_INDEX_1",
+                    "size": "5095",
+                    "used": "4813",
+                    "free": "282",
+                    "maxsize": "96000",
+                    "percent": "5.01"
+                },
+                {
+                    "name": "TRC_DB_I_LTE",
+                    "size": "5120",
+                    "used": "224",
+                    "free": "4896",
+                    "maxsize": "5120",
+                    "percent": "4.38"
+                },
+                {
+                    "name": "CSCACH",
+                    "size": "8648",
+                    "used": "8531",
+                    "free": "117",
+                    "maxsize": "204800",
+                    "percent": "4.17"
+                },
+                {
+                    "name": "SPMDDL",
+                    "size": "11817",
+                    "used": "10030",
+                    "free": "1787",
+                    "maxsize": "253952",
+                    "percent": "3.95"
+                },
+                {
+                    "name": "D3BSQL_INDEX_TS",
+                    "size": "16",
+                    "used": "10",
+                    "free": "6",
+                    "maxsize": "256",
+                    "percent": "3.88"
+                }
+            ],
+            "rman": [
+                {
+                    "date": "2022/11/27 20:05:30",
+                    "status": "COMPLETED"
+                },
+                {
+                    "date": "2022/11/28 20:05:34",
+                    "status": "COMPLETED"
+                },
+                {
+                    "date": "2022/11/29 20:05:19",
+                    "status": "COMPLETED"
+                },
+                {
+                    "date": "2022/11/30 20:05:35",
+                    "status": "COMPLETED"
+                },
+                {
+                    "date": "2022/12/01 20:05:22",
+                    "status": "COMPLETED"
+                },
+                {
+                    "date": "2022/12/02 20:05:49",
+                    "status": "COMPLETED"
+                },
+                {
+                    "date": "2022/12/03 20:05:40",
+                    "status": "COMPLETED"
+                },
+                {
+                    "date": "2022/12/04 20:05:37",
+                    "status": "COMPLETED"
+                },
+                {
+                    "date": "2022/12/05 20:05:36",
+                    "status": "COMPLETED"
+                },
+                {
+                    "date": "2022/12/06 20:05:27",
+                    "status": "COMPLETED"
+                },
+                {
+                    "date": "2022/12/07 20:05:46",
+                    "status": "COMPLETED"
+                },
+                {
+                    "date": "2022/12/08 20:05:36",
+                    "status": "COMPLETED"
+                },
+                {
+                    "date": "2022/12/09 20:05:50",
+                    "status": "COMPLETED"
+                },
+                {
+                    "date": "2022/12/10 20:05:28",
+                    "status": "COMPLETED"
+                },
+                {
+                    "date": "2022/12/11 20:05:22",
+                    "status": "COMPLETED"
+                }
+            ],
+            "dataguard": [],
+            "exception": [],
+            "session": [
+                {
+                    "date": "2022/12/05 09:00:29",
+                    "sessions": "sessions",
+                    "min": "1352",
+                    "max": "1910"
+                },
+                {
+                    "date": "2022/12/12 08:00:01",
+                    "sessions": "sessions",
+                    "min": "1531",
+                    "max": "1910"
+                }
+            ],
+            "buffer_hit": [
+                {
+                    "date": "2022/12/12",
+                    "num": "99"
+                }
+            ],
+            "sql": [
+                {
+                    "time": "1088167",
+                    "exec": "3643921894",
+                    "elap": "0",
+                    "id": "bunvx480ynf57",
+                    "text": "SELECT 1 FROM DUAL..."
+                },
+                {
+                    "time": "1046151",
+                    "exec": "177376",
+                    "elap": "5.9",
+                    "id": "csa054t034jgt",
+                    "text": "DECLARE job BINARY_INTEGER := ..."
+                },
+                {
+                    "time": "689079",
+                    "exec": "228926",
+                    "elap": "3.01",
+                    "id": "0w26sk6t6gq98",
+                    "text": "SELECT XMLTYPE(DBMS_REPORT.GET..."
+                },
+                {
+                    "time": "684294",
+                    "exec": "218273",
+                    "elap": "3.14",
+                    "id": "fhf8upax5cxsz",
+                    "text": "BEGIN sys.dbms_auto_report_int..."
+                },
+                {
+                    "time": "467755",
+                    "exec": "207281096",
+                    "elap": "0",
+                    "id": "0sbbcuruzd66f",
+                    "text": "select /*+ rule */ bucket_cnt,..."
+                },
+                {
+                    "time": "283585",
+                    "exec": "550840",
+                    "elap": ".51",
+                    "id": "0v3ztaw6x4nu4",
+                    "text": "SELECT   /* DCFW datacollector..."
+                },
+                {
+                    "time": "151323",
+                    "exec": "551755",
+                    "elap": ".27",
+                    "id": "3p6fmv2qfv77t",
+                    "text": "SELECT   /* DCFW datacollector..."
+                },
+                {
+                    "time": "102200",
+                    "exec": "2572753307",
+                    "elap": "0",
+                    "id": "0sbbcuruzd66f",
+                    "text": "select /*+ rule */ bucket_cnt,..."
+                },
+                {
+                    "time": "86981",
+                    "exec": "3391955140",
+                    "elap": "0",
+                    "id": "62yyzw3309d6a",
+                    "text": "SELECT VALUE FROM V$SESSION_FI..."
+                },
+                {
+                    "time": "75069",
+                    "exec": "186771712",
+                    "elap": "0",
+                    "id": "5dqz0hqtp9fru",
+                    "text": "select /*+ connect_by_filterin..."
+                }
+            ],
+            "summarytitle": {
+                "year1": "Y22",
+                "stage1": "第一期",
+                "year2": "Y22",
+                "stage2": "第二期"
+            },
+            "comparison": {
+                "event": "oss (lrc3vm4)",
+                "object1": "正常",
+                "object2": "正常",
+                "lock1": "正常",
+                "lock2": "正常",
+                "copy1": "正常",
+                "copy2": "正常",
+                "space1": "正常",
+                "space2": "正常"
+            },
+            "suggestion": {
+                "s1": "正常",
+                "s2": "正常",
+                "s3": "正常",
+                "s4": "正常",
+                "s5": "正常",
+                "s6": "正常",
+                "s7": "正常",
+                "s8": "正常",
+                "s9": "正常",
+                "s10": "正常",
+                "s11": "正常",
+                "s12": "正常",
+                "s13": "正常",
+                "s14": "正常"
+            },
+            "guard": [
+                {
+                    "thread": "1",
+                    "dest": "1",
+                    "applied": "NO",
+                    "sequence": "23756",
+                    "date": "2022/12/12",
+                    "time": "13:17:52"
+                },
+                {
+                    "thread": "",
+                    "dest": "1",
+                    "applied": "2",
+                    "sequence": "YES",
+                    "date": "23756",
+                    "time": "2022/12/12"
+                }
+            ]
+        },
+        {
+            "reportinfo": {
+                "company": "台灣大哥大股份有限公司",
+                "project": "第二期顧問服務報告",
+                "period": "111年7月1日~111年9月30日",
+                "hostname": "oss (arc1vm4)",
+                "db": "Ian Peng ( 彭英樹 )",
+                "consultant": "張正憲 / 黃慶庭",
+                "date": "中 華 民 國 111 年 9 月"
+            },
+            "system": [
+                {
+                    "file": "devtmpfs",
+                    "size": "35G",
+                    "used": "0",
+                    "avail": "35G",
+                    "percent": "0%",
+                    "mounted": "/dev"
+                },
+                {
+                    "file": "tmpfs",
+                    "size": "62G",
+                    "used": "0",
+                    "avail": "62G",
+                    "percent": "0%",
+                    "mounted": "/dev/shm"
+                },
+                {
+                    "file": "tmpfs",
+                    "size": "35G",
+                    "used": "1.1M",
+                    "avail": "35G",
+                    "percent": "1%",
+                    "mounted": "/run"
+                },
+                {
+                    "file": "tmpfs",
+                    "size": "35G",
+                    "used": "0",
+                    "avail": "35G",
+                    "percent": "0%",
+                    "mounted": "/sys/fs/cgroup"
+                },
+                {
+                    "file": "/dev/mapper/rootVG-root",
+                    "size": "51G",
+                    "used": "16G",
+                    "avail": "33G",
+                    "percent": "33%",
+                    "mounted": "/"
+                },
+                {
+                    "file": "/dev/mapper/rootVG-tmp",
+                    "size": "3.9G",
+                    "used": "17M",
+                    "avail": "3.6G",
+                    "percent": "1%",
+                    "mounted": "/tmp"
+                },
+                {
+                    "file": "/dev/sda3",
+                    "size": "988M",
+                    "used": "87M",
+                    "avail": "835M",
+                    "percent": "10%",
+                    "mounted": "/boot"
+                },
+                {
+                    "file": "/dev/mapper/rootVG-var",
+                    "size": "19G",
+                    "used": "4.3G",
+                    "avail": "14G",
+                    "percent": "25%",
+                    "mounted": "/var"
+                },
+                {
+                    "file": "/dev/mapper/vgredo-lvol1",
+                    "size": "118G",
+                    "used": "26G",
+                    "avail": "93G",
+                    "percent": "22%",
+                    "mounted": "/d/db-redo"
+                },
+                {
+                    "file": "/dev/mapper/vgdb-lvol1",
+                    "size": "1.3T",
+                    "used": "172G",
+                    "avail": "1.2T",
+                    "percent": "13%",
+                    "mounted": "/d/db"
+                },
+                {
+                    "file": "/dev/mapper/vgarc-lvol1",
+                    "size": "2.0T",
+                    "used": "23G",
+                    "avail": "2.0T",
+                    "percent": "2%",
+                    "mounted": "/d/db-arc"
+                },
+                {
+                    "file": "/dev/loop0",
+                    "size": "18M",
+                    "used": "505K",
+                    "avail": "16M",
+                    "percent": "4%",
+                    "mounted": "/var/lib/pcp"
+                },
+                {
+                    "file": "arc1vm5:/home",
+                    "size": "24G",
+                    "used": "500M",
+                    "avail": "23G",
+                    "percent": "3%",
+                    "mounted": "/home"
+                },
+                {
+                    "file": "arc1vm5:/d/oss/global/var/globalv4",
+                    "size": "256G",
+                    "used": "18G",
+                    "avail": "239G",
+                    "percent": "7%",
+                    "mounted": "/var/opt/oss/globalv4"
+                },
+                {
+                    "file": "arc1vm5:/d/oss/global",
+                    "size": "256G",
+                    "used": "18G",
+                    "avail": "239G",
+                    "percent": "7%",
+                    "mounted": "/d/oss/global"
+                },
+                {
+                    "file": "arc1vm5:/var/datasync",
+                    "size": "531G",
+                    "used": "76M",
+                    "avail": "504G",
+                    "percent": "1%",
+                    "mounted": "/mnt/datasync"
+                },
+                {
+                    "file": "/dev/mapper/vgbackup-lvol1",
+                    "size": "5.7T",
+                    "used": "280G",
+                    "avail": "5.5T",
+                    "percent": "5%",
+                    "mounted": "/backup"
+                }
+            ],
+            "tablespace": [
+                {
+                    "name": "AOADDL_1",
+                    "size": "15",
+                    "used": "15",
+                    "free": "0",
+                    "maxsize": "100",
+                    "percent": "14.88"
+                },
+                {
+                    "name": "SYSTEM",
+                    "size": "8284",
+                    "used": "8248",
+                    "free": "36",
+                    "maxsize": "65536",
+                    "percent": "12.58"
+                },
+                {
+                    "name": "AOADDL_INDEX_1",
+                    "size": "55",
+                    "used": "11",
+                    "free": "44",
+                    "maxsize": "100",
+                    "percent": "11.13"
+                },
+                {
+                    "name": "COSDDL_2",
+                    "size": "6722",
+                    "used": "6288",
+                    "free": "434",
+                    "maxsize": "64000",
+                    "percent": "9.83"
+                },
+                {
+                    "name": "SYSAUX",
+                    "size": "6191",
+                    "used": "5802",
+                    "free": "389",
+                    "maxsize": "65536",
+                    "percent": "8.85"
+                },
+                {
+                    "name": "TRC_DB_I_MAIN",
+                    "size": "386",
+                    "used": "158",
+                    "free": "228",
+                    "maxsize": "2048",
+                    "percent": "7.71"
+                },
+                {
+                    "name": "ALSDDL_INDEX_1",
+                    "size": "4945",
+                    "used": "4812",
+                    "free": "133",
+                    "maxsize": "96000",
+                    "percent": "5.01"
+                },
+                {
+                    "name": "REPSPMFE_TS",
+                    "size": "13484",
+                    "used": "11675",
+                    "free": "1809",
+                    "maxsize": "253952",
+                    "percent": "4.6"
+                },
+                {
+                    "name": "D3BSQL_INDEX_TS",
+                    "size": "16",
+                    "used": "9",
+                    "free": "7",
+                    "maxsize": "256",
+                    "percent": "3.71"
+                },
+                {
+                    "name": "TRC_DB_I_3G",
+                    "size": "2048",
+                    "used": "160",
+                    "free": "1888",
+                    "maxsize": "5120",
+                    "percent": "3.13"
+                },
+                {
+                    "name": "UTPDBM_INDEX_1",
+                    "size": "260",
+                    "used": "205",
+                    "free": "55",
+                    "maxsize": "6600",
+                    "percent": "3.1"
+                },
+                {
+                    "name": "SQLP22_1",
+                    "size": "50",
+                    "used": "47",
+                    "free": "3",
+                    "maxsize": "2000",
+                    "percent": "2.37"
+                },
+                {
+                    "name": "TRC_DB_MAIN",
+                    "size": "64",
+                    "used": "48",
+                    "free": "16",
+                    "maxsize": "2048",
+                    "percent": "2.34"
+                },
+                {
+                    "name": "USERS",
+                    "size": "708",
+                    "used": "684",
+                    "free": "24",
+                    "maxsize": "32768",
+                    "percent": "2.09"
+                },
+                {
+                    "name": "D3BSQL_DATA_TS",
+                    "size": "16",
+                    "used": "10",
+                    "free": "6",
+                    "maxsize": "512",
+                    "percent": "1.97"
+                }
+            ],
+            "rman": [
+                {
+                    "date": "2022/12/01 22:02:26",
+                    "status": "COMPLETED"
+                },
+                {
+                    "date": "2022/12/01 23:00:20",
+                    "status": "COMPLETED"
+                },
+                {
+                    "date": "2022/12/02 22:02:28",
+                    "status": "COMPLETED"
+                },
+                {
+                    "date": "2022/12/02 23:00:20",
+                    "status": "COMPLETED"
+                },
+                {
+                    "date": "2022/12/03 22:02:27",
+                    "status": "COMPLETED"
+                },
+                {
+                    "date": "2022/12/03 23:00:20",
+                    "status": "COMPLETED"
+                },
+                {
+                    "date": "2022/12/04 22:02:24",
+                    "status": "COMPLETED"
+                },
+                {
+                    "date": "2022/12/04 23:00:21",
+                    "status": "COMPLETED"
+                },
+                {
+                    "date": "2022/12/05 22:02:24",
+                    "status": "COMPLETED"
+                },
+                {
+                    "date": "2022/12/05 23:00:21",
+                    "status": "COMPLETED"
+                },
+                {
+                    "date": "2022/12/06 22:02:27",
+                    "status": "COMPLETED"
+                },
+                {
+                    "date": "2022/12/06 23:00:20",
+                    "status": "COMPLETED"
+                },
+                {
+                    "date": "2022/12/07 22:02:23",
+                    "status": "COMPLETED"
+                },
+                {
+                    "date": "2022/12/07 23:00:20",
+                    "status": "COMPLETED"
+                },
+                {
+                    "date": "2022/12/08 22:02:24",
+                    "status": "COMPLETED"
+                },
+                {
+                    "date": "2022/12/08 23:00:19",
+                    "status": "COMPLETED"
+                },
+                {
+                    "date": "2022/12/09 22:02:25",
+                    "status": "COMPLETED"
+                },
+                {
+                    "date": "2022/12/09 23:00:20",
+                    "status": "COMPLETED"
+                },
+                {
+                    "date": "2022/12/10 22:02:18",
+                    "status": "COMPLETED"
+                },
+                {
+                    "date": "2022/12/10 23:00:19",
+                    "status": "COMPLETED"
+                },
+                {
+                    "date": "2022/12/11 22:02:24",
+                    "status": "COMPLETED"
+                },
+                {
+                    "date": "2022/12/11 23:00:20",
+                    "status": "COMPLETED"
+                }
+            ],
+            "dataguard": [],
+            "exception": [],
+            "session": [
+                {
+                    "date": "2022/12/05 09:00:22",
+                    "sessions": "sessions",
+                    "min": "794",
+                    "max": "951"
+                },
+                {
+                    "date": "2022/12/12 08:00:50",
+                    "sessions": "sessions",
+                    "min": "788",
+                    "max": "951"
+                }
+            ],
+            "buffer_hit": [
+                {
+                    "date": "2022/12/12",
+                    "num": "99"
+                }
+            ],
+            "sql": [
+                {
+                    "time": "47834",
+                    "exec": "11476558",
+                    "elap": "0",
+                    "id": "1wz811srf8xh8",
+                    "text": "BEGIN    dbms_stats.gen_selmap..."
+                },
+                {
+                    "time": "33192",
+                    "exec": "150524",
+                    "elap": ".22",
+                    "id": "0v3ztaw6x4nu4",
+                    "text": "SELECT   /* DCFW datacollector..."
+                },
+                {
+                    "time": "25691",
+                    "exec": "4361025",
+                    "elap": ".01",
+                    "id": "8hrms5q9c3vxt",
+                    "text": "BEGIN    dbms_stats.postproces..."
+                },
+                {
+                    "time": "18600",
+                    "exec": "3026414497",
+                    "elap": "0",
+                    "id": "0sbbcuruzd66f",
+                    "text": "select /*+ rule */ bucket_cnt,..."
+                },
+                {
+                    "time": "16861",
+                    "exec": "150524",
+                    "elap": ".11",
+                    "id": "3p6fmv2qfv77t",
+                    "text": "SELECT   /* DCFW datacollector..."
+                },
+                {
+                    "time": "16630",
+                    "exec": "150524",
+                    "elap": ".11",
+                    "id": "4bphr9waxuhn7",
+                    "text": "SELECT   /* DCFW datacollector..."
+                },
+                {
+                    "time": "14648",
+                    "exec": "28831",
+                    "elap": ".51",
+                    "id": "fhf8upax5cxsz",
+                    "text": "BEGIN sys.dbms_auto_report_int..."
+                },
+                {
+                    "time": "13617",
+                    "exec": "27525",
+                    "elap": ".49",
+                    "id": "0w26sk6t6gq98",
+                    "text": "SELECT XMLTYPE(DBMS_REPORT.GET..."
+                },
+                {
+                    "time": "12411",
+                    "exec": "1972825604",
+                    "elap": "0",
+                    "id": "0sbbcuruzd66f",
+                    "text": "select /*+ rule */ bucket_cnt,..."
+                },
+                {
+                    "time": "9378",
+                    "exec": "80101085",
+                    "elap": "0",
+                    "id": "5dqz0hqtp9fru",
+                    "text": "select /*+ connect_by_filterin..."
+                }
+            ],
+            "summarytitle": {
+                "year1": "Y22",
+                "stage1": "第一期",
+                "year2": "Y22",
+                "stage2": "第二期"
+            },
+            "comparison": {
+                "event": "oss (arc1vm4)",
+                "object1": "正常",
+                "object2": "正常",
+                "lock1": "正常",
+                "lock2": "正常",
+                "copy1": "正常",
+                "copy2": "正常",
+                "space1": "正常",
+                "space2": "正常"
+            },
+            "suggestion": {
+                "s1": "正常",
+                "s2": "正常",
+                "s3": "正常",
+                "s4": "正常",
+                "s5": "正常",
+                "s6": "正常",
+                "s7": "正常",
+                "s8": "正常",
+                "s9": "正常",
+                "s10": "正常",
+                "s11": "正常",
+                "s12": "正常",
+                "s13": "正常",
+                "s14": "正常"
+            },
+            "guard": [
+                {
+                    "thread": "1",
+                    "dest": "1",
+                    "applied": "NO",
+                    "sequence": "9803",
+                    "date": "2022/12/12",
+                    "time": "07:40:10"
+                }
+            ]
+        },
+        {
+            "reportinfo": {
+                "company": "台灣大哥大股份有限公司",
+                "project": "第二期顧問服務報告",
+                "period": "111年7月1日~111年9月30日",
+                "hostname": "oss (arc31vm4)",
+                "db": "Ian Peng ( 彭英樹 )",
+                "consultant": "張正憲 / 黃慶庭",
+                "date": "中 華 民 國 111 年 9 月"
+            },
+            "system": [
+                {
+                    "file": "devtmpfs",
+                    "size": "35G",
+                    "used": "0",
+                    "avail": "35G",
+                    "percent": "0%",
+                    "mounted": "/dev"
+                },
+                {
+                    "file": "tmpfs",
+                    "size": "62G",
+                    "used": "0",
+                    "avail": "62G",
+                    "percent": "0%",
+                    "mounted": "/dev/shm"
+                },
+                {
+                    "file": "tmpfs",
+                    "size": "35G",
+                    "used": "3.5G",
+                    "avail": "31G",
+                    "percent": "11%",
+                    "mounted": "/run"
+                },
+                {
+                    "file": "tmpfs",
+                    "size": "35G",
+                    "used": "0",
+                    "avail": "35G",
+                    "percent": "0%",
+                    "mounted": "/sys/fs/cgroup"
+                },
+                {
+                    "file": "/dev/mapper/rootVG-root",
+                    "size": "51G",
+                    "used": "15G",
+                    "avail": "34G",
+                    "percent": "31%",
+                    "mounted": "/"
+                },
+                {
+                    "file": "/dev/sda1",
+                    "size": "142M",
+                    "used": "68M",
+                    "avail": "64M",
+                    "percent": "52%",
+                    "mounted": "/boot"
+                },
+                {
+                    "file": "/dev/mapper/vgdb-lvol1",
+                    "size": "1.3T",
+                    "used": "799G",
+                    "avail": "531G",
+                    "percent": "61%",
+                    "mounted": "/d/db"
+                },
+                {
+                    "file": "/dev/mapper/vgarc-lvol1",
+                    "size": "2.0T",
+                    "used": "202G",
+                    "avail": "1.8T",
+                    "percent": "11%",
+                    "mounted": "/d/db-arc"
+                },
+                {
+                    "file": "/dev/mapper/rootVG-tmp",
+                    "size": "3.9G",
+                    "used": "17M",
+                    "avail": "3.6G",
+                    "percent": "1%",
+                    "mounted": "/tmp"
+                },
+                {
+                    "file": "/dev/mapper/rootVG-var",
+                    "size": "19G",
+                    "used": "11G",
+                    "avail": "7.2G",
+                    "percent": "60%",
+                    "mounted": "/var"
+                },
+                {
+                    "file": "/dev/loop0",
+                    "size": "18M",
+                    "used": "2.3M",
+                    "avail": "14M",
+                    "percent": "15%",
+                    "mounted": "/var/lib/pcp"
+                },
+                {
+                    "file": "/dev/mapper/vgredo-lvol1",
+                    "size": "118G",
+                    "used": "26G",
+                    "avail": "93G",
+                    "percent": "22%",
+                    "mounted": "/d/db-redo"
+                },
+                {
+                    "file": "arc31vm5:/home",
+                    "size": "24G",
+                    "used": "4.5G",
+                    "avail": "20G",
+                    "percent": "20%",
+                    "mounted": "/home"
+                },
+                {
+                    "file": "arc31vm5:/d/oss/global/var/globalv4",
+                    "size": "739G",
+                    "used": "450G",
+                    "avail": "289G",
+                    "percent": "61%",
+                    "mounted": "/var/opt/oss/globalv4"
+                },
+                {
+                    "file": "arc31vm5:/var/datasync",
+                    "size": "266G",
+                    "used": "351M",
+                    "avail": "252G",
+                    "percent": "1%",
+                    "mounted": "/mnt/datasync"
+                },
+                {
+                    "file": "arc31vm5:/d/oss/global",
+                    "size": "739G",
+                    "used": "450G",
+                    "avail": "289G",
+                    "percent": "61%",
+                    "mounted": "/d/oss/global"
+                },
+                {
+                    "file": "tmpfs",
+                    "size": "6.9G",
+                    "used": "0",
+                    "avail": "6.9G",
+                    "percent": "0%",
+                    "mounted": "/run/user/353"
+                },
+                {
+                    "file": "tmpfs",
+                    "size": "6.9G",
+                    "used": "0",
+                    "avail": "6.9G",
+                    "percent": "0%",
+                    "mounted": "/run/user/502"
+                },
+                {
+                    "file": "/dev/mapper/vgbackup-lvol1",
+                    "size": "5.7T",
+                    "used": "2.1T",
+                    "avail": "3.7T",
+                    "percent": "37%",
+                    "mounted": "/backup"
+                },
+                {
+                    "file": "tmpfs",
+                    "size": "6.9G",
+                    "used": "0",
+                    "avail": "6.9G",
+                    "percent": "0%",
+                    "mounted": "/run/user/0"
+                }
+            ],
+            "tablespace": [
+                {
+                    "name": "AOADDL_1",
+                    "size": "15",
+                    "used": "14",
+                    "free": "1",
+                    "maxsize": "100",
+                    "percent": "14.06"
+                },
+                {
+                    "name": "AOADDL_INDEX_1",
+                    "size": "50",
+                    "used": "11",
+                    "free": "39",
+                    "maxsize": "100",
+                    "percent": "10.88"
+                },
+                {
+                    "name": "SYSAUX",
+                    "size": "6852",
+                    "used": "6364",
+                    "free": "488",
+                    "maxsize": "65536",
+                    "percent": "9.71"
+                },
+                {
+                    "name": "SYSTEM",
+                    "size": "6191",
+                    "used": "6160",
+                    "free": "31",
+                    "maxsize": "65536",
+                    "percent": "9.4"
+                },
+                {
+                    "name": "TRC_DB_I_MAIN",
+                    "size": "386",
+                    "used": "158",
+                    "free": "228",
+                    "maxsize": "2048",
+                    "percent": "7.71"
+                },
+                {
+                    "name": "SWMDB",
+                    "size": "810",
+                    "used": "745",
+                    "free": "65",
+                    "maxsize": "12500",
+                    "percent": "5.96"
+                },
+                {
+                    "name": "ALSDDL_INDEX_1",
+                    "size": "5045",
+                    "used": "4809",
+                    "free": "236",
+                    "maxsize": "96000",
+                    "percent": "5.01"
+                },
+                {
+                    "name": "COSDDL_2",
+                    "size": "5402",
+                    "used": "2998",
+                    "free": "2404",
+                    "maxsize": "64000",
+                    "percent": "4.68"
+                },
+                {
+                    "name": "REPSPMFE_TS",
+                    "size": "12978",
+                    "used": "11668",
+                    "free": "1310",
+                    "maxsize": "253952",
+                    "percent": "4.59"
+                },
+                {
+                    "name": "SPMDDL",
+                    "size": "12408",
+                    "used": "10535",
+                    "free": "1873",
+                    "maxsize": "253952",
+                    "percent": "4.15"
+                },
+                {
+                    "name": "D3BSQL_INDEX_TS",
+                    "size": "16",
+                    "used": "9",
+                    "free": "7",
+                    "maxsize": "256",
+                    "percent": "3.71"
+                },
+                {
+                    "name": "SQLBC4_1",
+                    "size": "47",
+                    "used": "33",
+                    "free": "14",
+                    "maxsize": "1024",
+                    "percent": "3.22"
+                },
+                {
+                    "name": "UTPDBM_INDEX_1",
+                    "size": "260",
+                    "used": "208",
+                    "free": "52",
+                    "maxsize": "6600",
+                    "percent": "3.15"
+                },
+                {
+                    "name": "TRC_DB_I_3G",
+                    "size": "2048",
+                    "used": "160",
+                    "free": "1888",
+                    "maxsize": "5120",
+                    "percent": "3.13"
+                },
+                {
+                    "name": "SPMDDL_INDEX",
+                    "size": "8308",
+                    "used": "6991",
+                    "free": "1317",
+                    "maxsize": "253952",
+                    "percent": "2.75"
+                }
+            ],
+            "rman": [
+                {
+                    "date": "2022/11/27 20:03:08",
+                    "status": "COMPLETED"
+                },
+                {
+                    "date": "2022/11/28 20:03:14",
+                    "status": "COMPLETED"
+                },
+                {
+                    "date": "2022/11/29 20:03:14",
+                    "status": "COMPLETED"
+                },
+                {
+                    "date": "2022/11/30 20:03:16",
+                    "status": "COMPLETED"
+                },
+                {
+                    "date": "2022/12/01 20:03:28",
+                    "status": "COMPLETED"
+                },
+                {
+                    "date": "2022/12/02 20:03:11",
+                    "status": "COMPLETED"
+                },
+                {
+                    "date": "2022/12/03 20:03:11",
+                    "status": "COMPLETED"
+                },
+                {
+                    "date": "2022/12/04 20:03:20",
+                    "status": "COMPLETED"
+                },
+                {
+                    "date": "2022/12/05 20:03:03",
+                    "status": "COMPLETED"
+                },
+                {
+                    "date": "2022/12/06 20:03:10",
+                    "status": "COMPLETED"
+                },
+                {
+                    "date": "2022/12/07 20:03:18",
+                    "status": "COMPLETED"
+                },
+                {
+                    "date": "2022/12/08 20:03:11",
+                    "status": "COMPLETED"
+                },
+                {
+                    "date": "2022/12/09 20:03:23",
+                    "status": "COMPLETED"
+                },
+                {
+                    "date": "2022/12/10 20:03:15",
+                    "status": "COMPLETED"
+                },
+                {
+                    "date": "2022/12/11 20:03:17",
+                    "status": "COMPLETED"
+                }
+            ],
+            "dataguard": [],
+            "exception": [],
+            "session": [
+                {
+                    "date": "2022/12/12 08:00:58",
+                    "sessions": "sessions",
+                    "min": "1015",
+                    "max": "1249"
+                },
+                {
+                    "date": "2022/12/05 09:00:04",
+                    "sessions": "sessions",
+                    "min": "867",
+                    "max": "1249"
+                }
+            ],
+            "buffer_hit": [
+                {
+                    "date": "2022/12/12",
+                    "num": "99"
+                }
+            ],
+            "sql": [
+                {
+                    "time": "276583",
+                    "exec": "125467954",
+                    "elap": "0",
+                    "id": "bunvx480ynf57",
+                    "text": "SELECT 1 FROM DUAL..."
+                },
+                {
+                    "time": "88481",
+                    "exec": "346322",
+                    "elap": ".26",
+                    "id": "0v3ztaw6x4nu4",
+                    "text": "SELECT   /* DCFW datacollector..."
+                },
+                {
+                    "time": "58029",
+                    "exec": "2099878",
+                    "elap": ".03",
+                    "id": "2rsg0kpp5grn5",
+                    "text": "call FM.GEP_PROCEDURE_PACKAGE...."
+                },
+                {
+                    "time": "54587",
+                    "exec": "2854477187",
+                    "elap": "0",
+                    "id": "0sbbcuruzd66f",
+                    "text": "select /*+ rule */ bucket_cnt,..."
+                },
+                {
+                    "time": "45547",
+                    "exec": "346322",
+                    "elap": ".13",
+                    "id": "3p6fmv2qfv77t",
+                    "text": "SELECT   /* DCFW datacollector..."
+                },
+                {
+                    "time": "44982",
+                    "exec": "346322",
+                    "elap": ".13",
+                    "id": "4bphr9waxuhn7",
+                    "text": "SELECT   /* DCFW datacollector..."
+                },
+                {
+                    "time": "30077",
+                    "exec": "3456306",
+                    "elap": ".01",
+                    "id": "1wz811srf8xh8",
+                    "text": "BEGIN    dbms_stats.gen_selmap..."
+                },
+                {
+                    "time": "26628",
+                    "exec": "3330220872",
+                    "elap": "0",
+                    "id": "0sbbcuruzd66f",
+                    "text": "select /*+ rule */ bucket_cnt,..."
+                },
+                {
+                    "time": "18274",
+                    "exec": "1398945",
+                    "elap": ".01",
+                    "id": "8hrms5q9c3vxt",
+                    "text": "BEGIN    dbms_stats.postproces..."
+                },
+                {
+                    "time": "16514",
+                    "exec": "30453",
+                    "elap": ".54",
+                    "id": "fhf8upax5cxsz",
+                    "text": "BEGIN sys.dbms_auto_report_int..."
+                }
+            ],
+            "summarytitle": {
+                "year1": "Y22",
+                "stage1": "第一期",
+                "year2": "Y22",
+                "stage2": "第二期"
+            },
+            "comparison": {
+                "event": "oss (arc31vm4)",
+                "object1": "正常",
+                "object2": "正常",
+                "lock1": "正常",
+                "lock2": "正常",
+                "copy1": "正常",
+                "copy2": "正常",
+                "space1": "正常",
+                "space2": "正常"
+            },
+            "suggestion": {
+                "s1": "正常",
+                "s2": "正常",
+                "s3": "正常",
+                "s4": "正常",
+                "s5": "正常",
+                "s6": "正常",
+                "s7": "正常",
+                "s8": "正常",
+                "s9": "正常",
+                "s10": "正常",
+                "s11": "正常",
+                "s12": "正常",
+                "s13": "正常",
+                "s14": "正常"
+            },
+            "guard": [
+                {
+                    "thread": "1",
+                    "dest": "1",
+                    "applied": "NO",
+                    "sequence": "21271",
+                    "date": "2022/12/12",
+                    "time": "13:00:42"
+                }
+            ]
         }
     ]
 }

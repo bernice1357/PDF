@@ -29,6 +29,7 @@ window.addEventListener('beforeprint', () => {
   }
   $('#update').css("display","none");
   $('#export').css("display","none");
+  $('#upload').css("display","none");
 });
 
 //列印之後
@@ -67,4 +68,5 @@ window.addEventListener('afterprint', () => {
   }
   $('#update').css("display","inline");
   $('#export').css("display","inline");
+  $('#upload').css("display","inline");
 });
