@@ -3,8 +3,14 @@
   margin-left: auto;
 }
 
-.border{
+.border2{
   margin: 1cm;
+}
+
+.border{
+  margin-top: 2cm;
+  margin-left: 1cm;
+  margin-right: 1cm;
 }
 
 .margin{
@@ -30,6 +36,11 @@
   line-height: 1020px;
   border-radius: 10px;
   border: 1px rgb(141, 130, 130) solid;
+}
+
+#preview > img{
+  height: 100%;
+  width: 100%;
 }
 
 .table1{

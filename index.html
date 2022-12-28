@@ -11,8 +11,10 @@
     <!-- JS -->
     <script src="./scripts/jquery-3.5.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.2.228/pdf.min.js"></script>
+    <!-- <script src="https://cdnjs.com/libraries/pdf.js"></script> -->
 
     <!-- JSON -->
+
     <script type="text/javascript" src="./json/report.json"></script>
     <script type="text/javascript" src="./json/test.json"></script>
 
@@ -22,22 +24,6 @@
         <button id="update">更新</button>
         <button id="export">輸出為pdf</button>
     </div>
-        <button id="show-pdf-button">Show PDF</button> 
-        <div id="pdf-main-container">
-            <div id="pdf-loader">Loading document ...</div>
-            <div id="pdf-contents">
-                <div id="pdf-meta">
-                    <div id="pdf-buttons">
-                        <button id="pdf-prev">Previous</button>
-                        <button id="pdf-next">Next</button>
-                    </div>
-                    <div id="page-count-container">Page <div id="pdf-current-page"></div> of <div id="pdf-total-pages"></div></div>
-                </div>
-                <canvas id="pdf-canvas" width="400"></canvas>
-                <div id="page-loader">Loading page ...</div>
-            </div>
-        </div>
-    </div> -->
     <div id="page-1" class="page">
         <div class="border">
             <table class="table1 margin" border="1">
@@ -74,11 +60,11 @@
         </div>   
     </div>
     <div id="page-2" class="page">
-        <div class="border">      
+        <div class="border2">      
             <input type="file" id="upload" accept=".jpg, .jpeg, .png, .pdf">
-            <div id="preview">          
+            <div id="preview">
                 <p>點擊上傳檔案</p>
-                <img style="width:720px; height:1050px; display:none"/>
+                <img style="display:none"/>
             </div>
         </div>
     </div>
@@ -86,33 +72,33 @@
         <div class="border">
             <table class="table1 margin" border="1">
                 <tr class="tr-1">
-                    <th style="width:30%; padding: 10px; text-align:left;">公司名稱</th>
+                    <th style="width:30%; padding: 10px; text-align:center;">公司名稱</th>
                     <td></td>
                 </tr>
                 <tr class="tr-2">
-                    <th style="width:30%; padding: 10px; text-align:left;">交付項目</th>
+                    <th style="width:30%; padding: 10px; text-align:center;">交付項目</th>
                     <td></td>
                 </tr>
                 <tr class="tr-3">
-                    <th style="width:30%; padding: 10px; text-align:left;">維護期間</th>
+                    <th style="width:30%; padding: 10px; text-align:center;">維護期間</th>
                     <td></td>
                 </tr>
                 <tr class="tr-4">
-                    <th style="width:30%; padding: 30px; text-align:left;">系統名稱(Hostname)</th>
+                    <th style="width:30%; padding: 30px; text-align:center;">系統名稱(Hostname)</th>
                     <td></td>
                 </tr>
             </table>
             <table class="table1" border="1">
                 <tr class="tr-5">
-                    <th style="width:30%; padding: 10px; text-align:left;">DB 負責人</th>
+                    <th style="width:30%; padding: 10px; text-align:center;">DB 負責人</th>
                     <td></td>
                 </tr>
                 <tr class="tr-6">
-                    <th style="width:30%; padding: 10px; text-align:left;">顧問姓名</th>
+                    <th style="width:30%; padding: 10px; text-align:center;">顧問姓名</th>
                     <td></td>
                 </tr>
                 <tr class="tr-7">
-                    <td colspan="2" style="padding: 10px; font-size: 22pt; text-align:left;"></td>
+                    <td colspan="2" style="padding: 10px; font-size: 22pt; text-align:center;"></td>
                 </tr>
             </table>
         </div>   

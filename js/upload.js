@@ -1,12 +1,7 @@
 var input = document.getElementById('upload');
 
-$('#show-pdf-button').remove();
-$('#pdf-main-container').remove();
-// var nodes = $('body')[0].childNode s; 
-$('body')[0].childNodes[4].nodeValue = "";
-
 input.addEventListener('change', function() {
-	//選擇檔案時按取消
+	//選擇檔案時按取消，就會清除之前選擇的檔案
 	if(input.files.length === 0) {
 		console.log('no files');
 		$('#preview > p').css('display','block');
@@ -17,6 +12,7 @@ input.addEventListener('change', function() {
 	else {
 		//隱藏「點擊上傳檔案」
 		$('#preview > p').css('display','none');
+
 		//上傳至瀏覽器的檔案
 		var file = input.files[0];
 
@@ -33,12 +29,14 @@ input.addEventListener('change', function() {
         pdfjsLib.getDocument(typedarray).promise.then(function(pdf) {
 					var pageNumber = 1;
 					pdf.getPage(pageNumber).then( function( page ) {
-						var scale = 1.2;
+						var scale = 3;
 						var viewport = page.getViewport( scale );
 						var canvas = document.createElement('canvas');
 						var context = canvas.getContext( "2d" );
-						canvas.height = 1020;
-						canvas.width = 720;
+						canvas.width = viewport.width;
+						canvas.height = viewport.height;
+						canvas.style.width = "100%";
+						canvas.style.height = "100%";
 
 						var renderContext = {
 							canvasContext: context,

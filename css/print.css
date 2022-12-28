@@ -19,6 +19,12 @@ body{
   margin-right: 0.5cm;
 }
 
+.border2{
+  margin-top: 0.5cm;
+  margin-right: auto;
+  margin-left: 0.5cm;
+}
+
 table{
   margin-right: auto;
   margin-left: auto;
