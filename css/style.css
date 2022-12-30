@@ -1,3 +1,10 @@
+:root {
+  --page-height: 1123px;
+  --page-width: 794px;
+  --preview-height: calc(var(--page-height) - 100px);
+  --preview-width: calc(var(--page-width) - 2cm);
+}
+
 .table{
   margin-right: auto;
   margin-left: auto;
@@ -9,6 +16,7 @@
 
 .border{
   margin-top: 2cm;
+  margin-bottom: 2cm;
   margin-left: 1cm;
   margin-right: 1cm;
 }
@@ -17,28 +25,28 @@
   margin-bottom: 150px;
 }
 
+#preview, #upload{
+  height: var(--preview-height);
+  width: var(--preview-width);
+}
+
 #upload{
   position: absolute;
-  height: 1000px;
-  width: 720px;
   opacity: 0;
   background-color: #ffffff;
 }
 
-#preview{
-  height: 1050px;
-  width: 720px;
-}
-
 #preview > p{
+  display: flex;
+  align-items : center;
+  justify-content: center;
   text-align: center;
   font-size: 50px;
-  line-height: 1020px;
   border-radius: 10px;
   border: 1px rgb(141, 130, 130) solid;
 }
 
-#preview > img{
+#preview > img, #preview > canvas, #preview > p{
   height: 100%;
   width: 100%;
 }
@@ -64,8 +72,8 @@
 }
 
 .page{
-  width: 794px;
-  height: 1123px;
+  width: var(--page-width);
+  height: var(--page-height);
   margin-bottom: 10px;
   margin-right: auto;
   margin-left: auto;
@@ -99,23 +107,23 @@ p{
 }
 
 .sinput{
-  width: 95%;
+  width: 205px;
+  font-size: 15px;
 }
 
 .cinput{
-  width: 85%;
+  width: 65px;
+  font-size: 15px;
 }
 
-#update, #export{
-  font-size: 20pt;
-  width: 150px;
-}
-
-#pdf-canvas{
-  width: 150px;
+.btn{
+  width: 100%;
+  margin: 10px;
+  font-size: 30px;
 }
 
 .btnBlock{
+  width: 200px;
   position: fixed;
   right: 3%;
   bottom: 3%;

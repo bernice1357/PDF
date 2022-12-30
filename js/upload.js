@@ -3,10 +3,10 @@ var input = document.getElementById('upload');
 input.addEventListener('change', function() {
 	//選擇檔案時按取消，就會清除之前選擇的檔案
 	if(input.files.length === 0) {
-		console.log('no files');
-		$('#preview > p').css('display','block');
+		// console.log('no files');
+		$('#preview > p').css('display','flex');
 		$('#preview > img').css('display','none');
-		$('#preview > canvas').css('display','none');
+		$('#preview > canvas').remove();
 	} 
 	//有檔案被上傳
 	else {
@@ -25,18 +25,16 @@ input.addEventListener('change', function() {
 			var fileReader = new FileReader(); 
 			fileReader.onload = function() {
         var typedarray = new Uint8Array(this.result);
+				
 				//取得要顯示PDF的檔案
         pdfjsLib.getDocument(typedarray).promise.then(function(pdf) {
 					var pageNumber = 1;
 					pdf.getPage(pageNumber).then( function( page ) {
-						var scale = 3;
-						var viewport = page.getViewport( scale );
+						var viewport = page.getViewport(3);
 						var canvas = document.createElement('canvas');
-						var context = canvas.getContext( "2d" );
+						var context = canvas.getContext('2d');
 						canvas.width = viewport.width;
 						canvas.height = viewport.height;
-						canvas.style.width = "100%";
-						canvas.style.height = "100%";
 
 						var renderContext = {
 							canvasContext: context,
@@ -53,7 +51,7 @@ input.addEventListener('change', function() {
 
 		//image
 		}else if(file.type.includes('image')){
-			$('#preview > canvas').css('display','none');
+			$('#preview > canvas').remove();
 			$('#preview > img').css('display','block');
 			$('#preview > img').attr('src',window.URL.createObjectURL(file));
 		}

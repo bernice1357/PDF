@@ -393,7 +393,7 @@ var report = {
             },
             "comparison": {
                 "event": "oss (nwrc3vm4)",
-                "object1": "正常",
+                "object1": "異常",
                 "object2": "正常",
                 "lock1": "正常",
                 "lock2": "正常",
@@ -403,7 +403,7 @@ var report = {
                 "space2": "正常"
             },
             "suggestion": {
-                "s1": "正常",
+                "s1": "異常",
                 "s2": "正常",
                 "s3": "正常",
                 "s4": "正常",

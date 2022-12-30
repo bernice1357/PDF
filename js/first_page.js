@@ -1,4 +1,4 @@
-//塞第一頁的資料
+//load 第一頁的資料
 for(var item in report.all_report_info){
   if(item==="hostname"){
     var host = report.all_report_info.hostname;

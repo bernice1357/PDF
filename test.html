@@ -1,0 +1,22 @@
+<meta charset="utf8" />
+<html>
+  <script src='./scripts/sql.js'></script>
+  <script src='./js/db.js'></script>
+  <script src="./scripts/jquery-3.5.1.min.js"></script>
+  <script type="text/javascript" src="./json/report.json"></script>
+  <body>
+    <button id="btnSend1">send</button>
+    <input class="ddd" list="List" value="正常">
+    <datalist id="List">
+      <option value="正常">  
+      <option value="B">
+    </datalist>
+  </body>
+  <script>
+    var btn = document.getElementById('btnSend1');
+    btn.addEventListener('click', function(){
+      console.log(5555);
+      console.log($('.ddd').val());
+    })
+  </script>
+</html>

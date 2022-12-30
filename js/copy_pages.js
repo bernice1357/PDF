@@ -1,8 +1,7 @@
-//複製 3-10 頁的頁面
+//複製html上page-3到page-10的元素
 
-//有幾個 hostname (要複製幾次)
+//根據 hostname 數量決定要複製幾次
 var len = report.all_report_info.hostname.length;
-
 //複製 3-10 頁的 html
 for(var item=1; item<len; item++){
   for(var i=3; i<=10; i++){
@@ -10,7 +9,7 @@ for(var item=1; item<len; item++){
   }
 }
 
-//多筆資料
+//有多筆資料的表格
 function multiple(tableName, page){
   var pageNum = 8*item+page;
   if(data[tableName].length!==0){
@@ -64,6 +63,7 @@ for(var item=0; item<len; item++){
       $(tdElement).append(newDiv);
     }
   }else{
+    //沒資料整頁拔掉
     $(`#page-${8*item+8}`).remove();
   }
   
@@ -141,6 +141,7 @@ for(var item=0; item<len; item++){
   //每欄
   var tdElement = `#page-${(8*(item)+10)} > .border > .comparison > tbody`;
     
+  //標題
   var parent = document.querySelector(tdElement+'> .comTitle');
   for(var i=0;i<4;i++){
     var child = document.createElement('th');
@@ -151,17 +152,21 @@ for(var item=0; item<len; item++){
     child.innerHTML = data.summarytitle.year2+'<br>'+data.summarytitle.stage2;
     parent.appendChild(child);
   }
+
+  //內容
   for(var col in data.comparison){
+    var tdElement = `#page-${(8*(item)+10)} > .border > .comparison > tbody > .content > `;
+
     if(col!=="event"){
-      $(tdElement+' .content > .'+col+' > input').val(data.comparison[col]);
+      $(tdElement+'td > .'+col).val(data.comparison[col]);
     }else{
-      $(tdElement+' .content > .'+col).text(data.comparison[col]);
+      $(tdElement+'.event').text(data.comparison[col]);
     }
   }
 
   //現況與建議事項
   for(var col in data.suggestion){
-    var tdElement = `#page-${(8*(item)+10)} > .border > .suggestion > tbody > tr > .${col} > input`;
+    var tdElement = `#page-${(8*(item)+10)} > .border > .suggestion > tbody > tr > td > .${col}`;
     $(tdElement).val(data.suggestion[col]);
   }
 }
