@@ -1,76 +1,77 @@
-@page {
+@page{
   size: A4;
   margin: 0.5cm;
-  orphans: 4;
-  widows: 2;
+  orphans:4;
+  widows:2;
 }
-body {
+
+body{
   -webkit-print-color-adjust: exact;
 }
 
-.page {
+.page{
   page-break-after: always;
 }
 
-.normal-border {
+.normal-border{
   margin-top: 1cm;
   margin-left: 0.5cm;
   margin-right: 0.5cm;
 }
 
-.upload-border {
+.upload-border{
   margin-top: 0.5cm;
   margin-right: auto;
   margin-left: 0.5cm;
 }
 
-table {
+table{
   margin-right: auto;
   margin-left: auto;
-  border-collapse: collapse;
+  border-collapse:collapse;
 }
 
-.table1 {
-  font-size: 20px;
+.table1{
+  font-size: 20px; 
   width: 70%;
   border: 3px solid #000;
   text-align: center;
 }
 
-.table2 {
+.table2{
   margin-right: auto;
   margin-left: auto;
   width: 100%;
   border: 2px solid #000;
 }
 
-.margin {
+.margin{
   margin-bottom: 150px;
 }
 
-.header {
-  background-color: rgb(71, 124, 184) !important;
+.header{
+  background-color:rgb(71, 124, 184) !important;
   color: white;
   text-align: center;
 }
 
-.unit {
+.unit{
   margin-left: 75%;
 }
 
-h1 {
+h1{
   font-size: 22pt;
   font-style: italic;
   text-decoration: underline double;
 }
 
-h2 {
+h2{
   font-size: 20pt;
   font-style: italic;
   text-decoration: underline double;
 }
 
-.text {
+.text{
   text-align: end;
   position: absolute;
   width: calc(100% - 2px);
@@ -78,13 +79,13 @@ h2 {
   right: 1px;
 }
 
-.bar {
+.bar{
   background-color: rgb(130, 110, 216);
   height: calc(100% - 2px);
   position: absolute;
   top: 1px;
 }
 
-.btnBlock {
+.btnBlock{
   display: none;
-}/*# sourceMappingURL=print.css.map */
+}

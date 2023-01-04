@@ -1,132 +1,149 @@
-:root {
-  --page-height: 1123px;
-  --page-width: 794px;
-  --preview-height: calc(var(--page-height) - 100px);
-  --preview-width: calc(var(--page-width) - 2cm);
-}
-
-.table{
-  margin-right: auto;
-  margin-left: auto;
-}
-
-.border2{
-  margin: 1cm;
-}
-
-.border{
-  margin-top: 2cm;
-  margin-bottom: 2cm;
-  margin-left: 1cm;
-  margin-right: 1cm;
-}
-
-.margin{
-  margin-bottom: 150px;
-}
-
-#preview, #upload{
-  height: var(--preview-height);
-  width: var(--preview-width);
-}
-
-#upload{
-  position: absolute;
-  opacity: 0;
-  background-color: #ffffff;
-}
-
-#preview > p{
-  display: flex;
-  align-items : center;
-  justify-content: center;
-  text-align: center;
-  font-size: 50px;
-  border-radius: 10px;
-  border: 1px rgb(141, 130, 130) solid;
-}
-
-#preview > img, #preview > canvas, #preview > p{
-  height: 100%;
-  width: 100%;
-}
-
-.table1{
-  margin-right: auto;
-  margin-left: auto;
-  font-size: 20px; 
-  width: 80%;
-  border: 3px solid #000 ;
-  text-align: center;
-  border-collapse:collapse;
-}
-
-.table1 > tr > td{
-  text-align:left;
-}
-
-.table2{
-  width: 100%;
-  border: 2px solid #000;
-  border-collapse:collapse;
-}
-
-.page{
-  width: var(--page-width);
-  height: var(--page-height);
+.page {
+  width: 794px;
+  height: 1123px;
   margin-bottom: 10px;
   margin-right: auto;
   margin-left: auto;
   border: 1px solid #000;
 }
 
-.header{
-  background-color:rgb(71, 124, 184) !important;
+table {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.normal-border {
+  margin-top: 2cm;
+  margin-bottom: 2cm;
+  margin-left: 1cm;
+  margin-right: 1cm;
+}
+.normal-border .table1 {
+  margin-right: auto;
+  margin-left: auto;
+  font-size: 20px;
+  width: 80%;
+  border: 3px solid #000;
+  text-align: center;
+  border-collapse: collapse;
+}
+.normal-border .table1 tr th {
+  width: 30%;
+  padding: 10px;
+  text-align: center;
+}
+.normal-border .table2 {
+  width: 100%;
+  border: 2px solid #000;
+  border-collapse: collapse;
+}
+.normal-border .margin {
+  margin-bottom: 150px;
+}
+
+.unclick {
+  border: 5px #756f6f dotted;
+}
+.unclick div {
+  margin-top: 250px;
+}
+.unclick div p {
+  color: #756f6f;
+}
+.unclick div svg {
+  height: 100px;
+  width: 100px;
+}
+.unclick div svg path {
+  fill: #756f6f;
+}
+
+.click {
+  border: 5px #336ba7 dotted;
+}
+.click div {
+  margin-top: 250px;
+}
+.click div p {
+  color: #336ba7;
+}
+.click div svg {
+  height: 100px;
+  width: 100px;
+}
+.click div svg path {
+  fill: #336ba7;
+}
+
+.upload-border {
+  margin: 1cm;
+}
+.upload-border #upload {
+  position: absolute;
+  opacity: 0;
+  background-color: #ffffff;
+  height: 1047.41px;
+  width: 718.4094488189px;
+}
+.upload-border #upload-message {
+  display: block;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 50px;
+  border-radius: 10px;
+  height: 1039.41px;
+  width: 710.4094488189px;
+  height: 1047.41px;
+  width: 718.4094488189px;
+}
+.upload-border #preview img, .upload-border #preview canvas {
+  height: 100%;
+  width: 100%;
+}
+
+.header {
+  background-color: rgb(71, 124, 184) !important;
   color: white;
   text-align: center;
 }
 
-.unit{
+.unit {
   margin-left: 74%;
 }
 
-h1{
+h1 {
   font-size: 20pt;
   font-style: italic;
   text-decoration: underline double;
 }
 
-h2{
+h2 {
   font-size: 18pt;
   font-style: italic;
   text-decoration: underline double;
 }
 
-p{
-  font-size: 10pt;
-}
-
-.input{
+.input {
   width: calc(100% - 8px);
   font-size: 15px;
 }
 
-.btn{
-  width: 100%;
-  margin: 10px;
-  font-size: 30px;
-  z-index: -1;
-}
-
-.btnBlock{
+.btnBlock {
   width: 200px;
   position: fixed;
   right: 3%;
   bottom: 3%;
   z-index: 1;
 }
+.btnBlock button {
+  width: 100%;
+  margin: 10px;
+  font-size: 30px;
+  z-index: -1;
+}
 
-.text{
+.text {
   text-align: end;
   position: absolute;
   width: calc(100% - 2px);
@@ -134,9 +151,9 @@ p{
   right: 1px;
 }
 
-.bar{
+.bar {
   background-color: rgb(130, 110, 216);
   height: calc(100% - 2px);
   position: absolute;
   top: 1px;
-}
+}/*# sourceMappingURL=style.css.map */

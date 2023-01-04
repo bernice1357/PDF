@@ -22,7 +22,7 @@ function multiple(tableName, page){
         htmlObject.innerHTML = data[tableName][row][col];
         newDiv.appendChild(htmlObject);
       }
-      var tdElement = `#page-${pageNum} > .border > .${tableName} > tbody`;
+      var tdElement = `#page-${pageNum} > .normal-border > .${tableName} > tbody`;
       $(tdElement).append(newDiv);
     }
   }else{
@@ -35,7 +35,7 @@ for(var item=0; item<len; item++){
   var data = report.reports[item];
 
   //第三頁
-  var tdElement = `#page-${(8*item+3)} > .border > table > tbody > `;
+  var tdElement = `#page-${(8*item+3)} > .normal-border > table > tbody > `;
   $(tdElement+'.tr-1 > td').text(data.reportinfo.company);
   $(tdElement+'.tr-2 > td').text(data.reportinfo.project);
   $(tdElement+'.tr-3 > td').text(data.reportinfo.period);
@@ -80,7 +80,7 @@ for(var item=0; item<len; item++){
         }
         trElement.appendChild(tdElement);
       }
-      var page = `#page-${pageNum} > .border > .tablespace > tbody`;
+      var page = `#page-${pageNum} > .normal-border > .tablespace > tbody`;
       $(page).append(trElement);
     }
   }else{
@@ -97,7 +97,7 @@ for(var item=0; item<len; item++){
         htmlObject.innerHTML = data.exception[row][col];
         newDiv.appendChild(htmlObject);
       }
-      var tdElement = `#page-${8*item+8} > .border > .exception > tbody`;
+      var tdElement = `#page-${8*item+8} > .normal-border > .exception > tbody`;
       $(tdElement).append(newDiv);
     }
   }else{
@@ -121,7 +121,7 @@ for(var item=0; item<len; item++){
           break;
         }
       }
-      var tdElement = `#page-${(8*item+7)} > .border > .dataguard > tbody`;
+      var tdElement = `#page-${(8*item+7)} > .normal-border > .dataguard > tbody`;
       $(tdElement).append(parent);
     }
   }else{
@@ -132,7 +132,7 @@ for(var item=0; item<len; item++){
 
   //效能分析說明
   if(data.session.length!==0 && data.buffer_hit.length!==0){
-    var tdElement = `#page-${(8*(item)+9)} > .border > .effect > tbody`;
+    var tdElement = `#page-${(8*(item)+9)} > .normal-border > .effect > tbody`;
     //每列
     for(var row in data.session){
       var parent = document.createElement('tr');
@@ -177,7 +177,7 @@ for(var item=0; item<len; item++){
 
   //資料庫問題彙總與上一期比較
   //每欄
-  var tdElement = `#page-${(8*(item)+10)} > .border > .comparison > tbody`;
+  var tdElement = `#page-${(8*(item)+10)} > .normal-border > .comparison > tbody`;
     
   //標題
   var parent = document.querySelector(tdElement+'> .comTitle');
@@ -193,7 +193,7 @@ for(var item=0; item<len; item++){
 
   //內容
   for(var col in data.comparison){
-    var tdElement = `#page-${(8*(item)+10)} > .border > .comparison > tbody > .content > `;
+    var tdElement = `#page-${(8*(item)+10)} > .normal-border > .comparison > tbody > .content > `;
 
     if(col!=="event"){
       $(tdElement+'td > .'+col).val(data.comparison[col]);
@@ -204,7 +204,7 @@ for(var item=0; item<len; item++){
 
   //現況與建議事項
   for(var col in data.suggestion){
-    var tdElement = `#page-${(8*(item)+10)} > .border > .suggestion > tbody > tr > td > .${col}`;
+    var tdElement = `#page-${(8*(item)+10)} > .normal-border > .suggestion > tbody > tr > td > .${col}`;
     $(tdElement).val(data.suggestion[col]);
   }
 }

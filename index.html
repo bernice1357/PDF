@@ -18,38 +18,37 @@
 </head>
 <body>
     <div class="btnBlock">
-        <!-- <button class="btn" id="update">更新</button> -->
-        <button class="btn" id="export_pdf">輸出為 PDF</button>
-        <button class="btn" id="export_json">輸出 JSON</button>
+        <button id="export_pdf">輸出為 PDF</button>
+        <button id="export_json">輸出 JSON</button>
     </div>
     <div id="page-1" class="page">
-        <div class="border">
+        <div class="normal-border">
             <table class="table1 margin" border="1">
                 <tr>
                     <th style="width:30%; padding: 10px;">公司名稱</th>
-                    <td id="company" style="text-align:left;"></td>
+                    <td id="company"></td>
                 </tr>
                 <tr>
                     <th style="width:30%; padding: 10px;">交付項目</th>
-                    <td id="project" style="text-align:left;"></td>
+                    <td id="project"></td>
                 </tr>
                 <tr>
                     <th style="width:30%; padding: 10px;">維護期間</th>
-                    <td id="period" style="text-align:left;"></td>
+                    <td id="period"></td>
                 </tr>
                 <tr>
                     <th style="width:30%; padding: 30px;">系統名稱(Hostname)</th>
-                    <td id="hostname" style="text-align:left;"></td>
+                    <td id="hostname"></td>
                 </tr>
             </table>
             <table class="table1" border="1">
                 <tr>
                     <th style="width:30%; padding: 10px;">DB 負責人</th>
-                    <td id="db" style="text-align:left;"></td>
+                    <td id="db"></td>
                 </tr>
                 <tr>
                     <th style="width:30%; padding: 10px;">顧問姓名</th>
-                    <td id="consultant" style="text-align:left;"></td>
+                    <td id="consultant"></td>
                 </tr>
                 <tr>
                     <td id="date" colspan="2" style="padding: 10px; font-size: 22pt;"></td>
@@ -58,51 +57,68 @@
         </div>   
     </div>
     <div id="page-2" class="page">
-        <div class="border2">      
-            <input type="file" id="upload" accept=".jpg, .jpeg, .png, .pdf">
+        <div class="upload-border">      
+            <input type="file" id="upload" accept="image/*, .pdf">
+            <div id="upload-message" class="unclick">
+                <div>
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+                    viewBox="0 0 312.602 312.602" xml:space="preserve">
+                        <path class="upload-svg" d="M251.52,137.244c-3.966,0-7.889,0.38-11.738,1.134c-1.756-47.268-40.758-85.181-88.448-85.181
+                        c-43.856,0-80.964,32.449-87.474,75.106C28.501,129.167,0,158.201,0,193.764c0,36.106,29.374,65.48,65.48,65.48h54.782
+                        c4.143,0,7.5-3.357,7.5-7.5c0-4.143-3.357-7.5-7.5-7.5H65.48c-27.835,0-50.48-22.645-50.48-50.48c0-27.835,22.646-50.48,50.48-50.48
+                        c1.367,0,2.813,0.067,4.419,0.206l7.6,0.658l0.529-7.61c2.661-38.322,34.861-68.341,73.306-68.341
+                        c40.533,0,73.51,32.977,73.51,73.51c0,1.863-0.089,3.855-0.272,6.088l-0.983,11.968l11.186-4.367
+                        c5.356-2.091,10.99-3.151,16.747-3.151c25.409,0,46.081,20.672,46.081,46.081c0,25.408-20.672,46.08-46.081,46.08
+                        c-0.668,0-20.608-0.04-40.467-0.08c-19.714-0.04-39.347-0.08-39.999-0.08c-4.668,0-7.108-2.248-7.254-6.681v-80.959l8.139,9.667
+                        c2.667,3.17,7.399,3.576,10.567,0.907c3.169-2.667,3.575-7.398,0.907-10.567l-18.037-21.427c-2.272-2.699-5.537-4.247-8.958-4.247
+                        c-3.421,0-6.686,1.548-8.957,4.247l-18.037,21.427c-2.668,3.169-2.262,7.9,0.907,10.567c1.407,1.185,3.121,1.763,4.826,1.763
+                        c2.137,0,4.258-0.908,5.741-2.67l7.901-9.386v80.751c0,8.686,5.927,21.607,22.254,21.607c0.652,0,20.27,0.04,39.968,0.079
+                        c19.874,0.041,39.829,0.081,40.498,0.081c33.681,0,61.081-27.4,61.081-61.08C312.602,164.644,285.201,137.244,251.52,137.244z"/>
+                    </svg>
+                    <p>點擊上傳檔案<br>(PDF、圖片)</p>
+                </div>
+            </div>
             <div id="preview">
-                <p>點擊上傳檔案<br>可接受檔案類型：PDF、圖片</p>
-                <img style="display:none"/>
             </div>
         </div>
     </div>
     <div id="page-3" class="page">
-        <div class="border">
+        <div class="normal-border">
             <table class="table1 margin" border="1">
                 <tr class="tr-1">
-                    <th style="width:30%; padding: 10px; text-align:center;">公司名稱</th>
+                    <th>公司名稱</th>
                     <td></td>
                 </tr>
                 <tr class="tr-2">
-                    <th style="width:30%; padding: 10px; text-align:center;">交付項目</th>
+                    <th>交付項目</th>
                     <td></td>
                 </tr>
                 <tr class="tr-3">
-                    <th style="width:30%; padding: 10px; text-align:center;">維護期間</th>
+                    <th>維護期間</th>
                     <td></td>
                 </tr>
                 <tr class="tr-4">
-                    <th style="width:30%; padding: 30px; text-align:center;">系統名稱(Hostname)</th>
+                    <th>系統名稱(Hostname)</th>
                     <td></td>
                 </tr>
             </table>
             <table class="table1" border="1">
                 <tr class="tr-5">
-                    <th style="width:30%; padding: 10px; text-align:center;">DB 負責人</th>
+                    <th>DB 負責人</th>
                     <td></td>
                 </tr>
                 <tr class="tr-6">
-                    <th style="width:30%; padding: 10px; text-align:center;">顧問姓名</th>
+                    <th>顧問姓名</th>
                     <td></td>
                 </tr>
                 <tr class="tr-7">
-                    <td colspan="2" style="padding: 10px; font-size: 22pt; text-align:center;"></td>
+                    <td colspan="2" style="font-size: 22pt;"></td>
                 </tr>
             </table>
         </div>   
     </div>
     <div id="page-4" class="page">
-        <div class="border">
+        <div class="normal-border">
             <h1>系統使用空間</h1>
             <table class="system table2" border="1">
                 <tr class="header">
@@ -117,7 +133,7 @@
         </div>
     </div>
     <div id="page-5" class="page">
-        <div class="border">
+        <div class="normal-border">
             <h1>表空間使用報告</h1>
             <span class="unit">單位(MB)</span>
             <table class="tablespace table2" border="1">
@@ -133,7 +149,7 @@
         </div>
     </div>
     <div id="page-6" class="page">
-        <div class="border">
+        <div class="normal-border">
             <h1>RMAN備份</h1>
             <table class="rman table2" border="1">
                 <tr class="header">
@@ -144,7 +160,7 @@
         </div>
     </div>
     <div id="page-7" class="page">
-        <div class="border">
+        <div class="normal-border">
             <h1>DataGuard同步機制</h1>
             <table class="dataguard table2" border="1">
                 <tr class="header">
@@ -158,7 +174,7 @@
         </div>
     </div>
     <div id="page-8" class="page">
-        <div class="border">
+        <div class="normal-border">
             <h1>物件狀態異常報告</h1>
             <p class="message"></p>
             <table class="exception table2" border="1">
@@ -172,7 +188,7 @@
         </div>
     </div>
     <div id="page-9" class="page">
-        <div class="border">
+        <div class="normal-border">
             <h2>效能分析說明</h2>
             <table class="effect table2" border="1">
                 <tr class="header">
@@ -197,7 +213,7 @@
         </div>
     </div>
     <div id="page-10" class="page">
-        <div class="border">
+        <div class="normal-border">
             <h1>總結</h1>
             <span>資料庫問題彙總與上一期比較</span>
             <table class="comparison table2" border="1">

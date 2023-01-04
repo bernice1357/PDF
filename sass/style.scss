@@ -1,0 +1,175 @@
+$page-height: 1123px;
+$page-width: 794px;
+$preview-height: calc($page-height - 75.59px);
+$preview-width: calc($page-width - 2cm);
+
+.page{
+  width: $page-width;
+  height: $page-height;
+  margin-bottom: 10px;
+  margin-right: auto;
+  margin-left: auto;
+  border: 1px solid #000;
+}
+
+table{
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.normal-border{
+  margin-top: 2cm;
+  margin-bottom: 2cm;
+  margin-left: 1cm;
+  margin-right: 1cm;
+
+  .table1{
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 20px; 
+    width: 80%;
+    border: 3px solid #000;
+    text-align: center;
+    border-collapse:collapse;
+
+    tr{
+      th{
+        width:30%; 
+        padding: 10px; 
+        text-align:center;
+      }
+    }
+  }
+
+  .table2{
+    width: 100%;
+    border: 2px solid #000;
+    border-collapse: collapse;
+  }
+
+  .margin{
+    margin-bottom: 150px;
+  }
+}
+
+.unclick{
+  border: 5px #756f6f dotted;
+  div{
+    margin-top: 250px;
+    p{
+      color:#756f6f;
+    }
+    svg{
+      height: 100px;
+      width: 100px;
+      path{
+        fill:#756f6f;
+      }
+    }
+  }
+}
+
+.click{
+  border: 5px #336ba7 dotted;
+  div{
+    margin-top: 250px;
+    p{
+      color:#336ba7;
+    }
+    svg{
+      height: 100px;
+      width: 100px;
+      path{
+        fill:#336ba7;
+      }
+    }
+  }
+}
+
+.upload-border{
+  margin: 1cm;
+  #upload{
+    position: absolute;
+    opacity: 0;
+    background-color: #ffffff;
+    height: $preview-height;
+    width: $preview-width;
+  }
+
+  #upload-message{
+    display: block;
+    align-items : center;
+    justify-content: center;
+    text-align: center;
+    font-size: 50px;
+    border-radius: 10px;
+    height: calc($preview-height - 8px);
+    width: calc($preview-width - 8px);
+    height: $preview-height;
+    width: $preview-width;
+  }
+
+  #preview {
+    img, canvas{
+      height: 100%;
+      width: 100%;
+    }
+  }
+}
+
+.header{
+  background-color:rgb(71, 124, 184) !important;
+  color: white;
+  text-align: center;
+}
+
+.unit{
+  margin-left: 74%;
+}
+
+h1{
+  font-size: 20pt;
+  font-style: italic;
+  text-decoration: underline double;
+}
+
+h2{
+  font-size: 18pt;
+  font-style: italic;
+  text-decoration: underline double;
+}
+
+.input{
+  width: calc(100% - 8px);
+  font-size: 15px;
+}
+
+.btnBlock{
+  width: 200px;
+  position: fixed;
+  right: 3%;
+  bottom: 3%;
+  z-index: 1;
+
+  button{
+    width: 100%;
+    margin: 10px;
+    font-size: 30px;
+    z-index: -1;
+  }
+}
+
+.text{
+  text-align: end;
+  position: absolute;
+  width: calc(100% - 2px);
+  top: 1px;
+  right: 1px;
+}
+
+.bar{
+  background-color: rgb(130, 110, 216);
+  height: calc(100% - 2px);
+  position: absolute;
+  top: 1px;
+}
