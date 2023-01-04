@@ -106,13 +106,8 @@ p{
   font-size: 10pt;
 }
 
-.sinput{
-  width: 205px;
-  font-size: 15px;
-}
-
-.cinput{
-  width: 65px;
+.input{
+  width: calc(100% - 8px);
   font-size: 15px;
 }
 
@@ -120,6 +115,7 @@ p{
   width: 100%;
   margin: 10px;
   font-size: 30px;
+  z-index: -1;
 }
 
 .btnBlock{
@@ -127,4 +123,20 @@ p{
   position: fixed;
   right: 3%;
   bottom: 3%;
+  z-index: 1;
+}
+
+.text{
+  text-align: end;
+  position: absolute;
+  width: calc(100% - 2px);
+  top: 1px;
+  right: 1px;
+}
+
+.bar{
+  background-color: rgb(130, 110, 216);
+  height: calc(100% - 2px);
+  position: absolute;
+  top: 1px;
 }

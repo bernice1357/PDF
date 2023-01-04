@@ -44,10 +44,48 @@ for(var item=0; item<len; item++){
   $(tdElement+'.tr-6 > td').text(data.reportinfo.consultant);
   $(tdElement+'.tr-7 > td').text(data.reportinfo.date);
 
+  //有多筆資料的表格
   multiple('system',4);
-  multiple('tablespace',5);
   multiple('rman',6);
   multiple('sql',9);
+
+  //表空間使用報告
+  var pageNum = 8*item+5;
+  if(data['tablespace'].length!==0){
+    //每列
+    for(var row in data['tablespace']){
+
+      var trElement = document.createElement('tr');
+      //每欄
+      for(var col in data['tablespace'][row]){
+
+        var tdElement = document.createElement('td');
+        if(col==='percent'){
+          
+          tdElement.style.position='relative';
+          //放 div
+          var bar = document.createElement('div');
+          bar.setAttribute('class','bar');
+          bar.style.width = data['tablespace'][row][col]+'%';
+          tdElement.appendChild(bar);
+
+          //放 span
+          var text = document.createElement('span');
+          text.setAttribute('class','text');
+          text.innerHTML = data['tablespace'][row][col];
+          tdElement.appendChild(text);
+
+        }else{
+          tdElement.innerHTML = data['tablespace'][row][col];
+        }
+        trElement.appendChild(tdElement);
+      }
+      var page = `#page-${pageNum} > .border > .tablespace > tbody`;
+      $(page).append(trElement);
+    }
+  }else{
+    $(`#page-${pageNum}`).remove();
+  }
 
   //物件狀態異常報告
   if(data.exception.length!==0){
