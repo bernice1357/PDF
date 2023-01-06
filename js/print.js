@@ -8,13 +8,17 @@ $('#export_pdf').click(function () {
 //列印之前
 window.addEventListener('beforeprint', () => {
   var len = report.all_report_info.hostname.length;
-
   var tdElement = $('.comparison > tbody > .content > td').children().css('display', 'none');
-  
+
+  //判斷有沒上傳檔案
+  if(!input.files.length){
+    $('.upload-border').append('<p>未上傳任何檔案</p>');
+  }
+
   //每份複製
   for(var item=0; item<len; item++){
 
-    var tdElement = `#page-${(8*(item)+10)} > .border > .comparison > tbody > .content > td`;
+    var tdElement = `#page-${(8*(item)+10)} > .normal-border > fieldset > .comparison > tbody > .content > td`;
 
     //資料庫問題彙總與上一期比較
     for(var col in report.reports[item].comparison){
@@ -25,7 +29,7 @@ window.addEventListener('beforeprint', () => {
       }else continue;
     }
 
-    var tdElement = `#page-${(8*(item)+10)} > .border > .suggestion > tbody > tr > td`;
+    var tdElement = `#page-${(8*(item)+10)} > .normal-border > fieldset > .suggestion > tbody > tr > td`;
     //現況與建議事項
     for(var col in report.reports[item].suggestion){
       var data = $(tdElement+'> .'+col).val();
@@ -40,23 +44,28 @@ window.addEventListener('beforeprint', () => {
 //列印之後
 window.addEventListener('afterprint', () => {
 
+  //判斷有沒上傳檔案
+  if(!input.files.length){
+    $('.upload-border > p').remove();
+  }
+
   //每份複製
   for(var item=0; item<len; item++){
 
-    var tdElement = `#page-${(8*(item)+10)} > .border > .comparison > tbody > .content > td`;
+    var data = report.reports[item];
+    var tdElement = `#page-${(8*(item)+10)} > .normal-border > fieldset > .comparison > tbody > .content > td`;
 
     //資料庫問題彙總與上一期比較
-    for(var col in report.reports[item].comparison){
+    for(var col in data.comparison){
       if(col!=="event"){
         $(tdElement+'> input').css('display', 'flex');
         $(tdElement+'> p').remove();
       }else continue;
     }
     
-    var tdElement = `#page-${(8*(item)+10)} > .border > .suggestion > tbody > tr > td`;
+    var tdElement = `#page-${(8*(item)+10)} > .normal-border > fieldset > .suggestion > tbody > tr > td`;
     //現況與建議事項
-    for(var col in report.reports[item].suggestion){
-      console.log(1111);
+    for(var col in data.suggestion){
       $(tdElement+'> input').css('display', 'flex');
       $(tdElement+'> p').remove();
     }

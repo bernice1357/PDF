@@ -23,35 +23,35 @@
     </div>
     <div id="page-1" class="page">
         <div class="normal-border">
-            <table class="table1 margin" border="1">
+            <table class="title-table margin" border="1">
                 <tr>
-                    <th style="width:30%; padding: 10px;">公司名稱</th>
+                    <th>公司名稱</th>
                     <td id="company"></td>
                 </tr>
                 <tr>
-                    <th style="width:30%; padding: 10px;">交付項目</th>
+                    <th>交付項目</th>
                     <td id="project"></td>
                 </tr>
                 <tr>
-                    <th style="width:30%; padding: 10px;">維護期間</th>
+                    <th>維護期間</th>
                     <td id="period"></td>
                 </tr>
                 <tr>
-                    <th style="width:30%; padding: 30px;">系統名稱(Hostname)</th>
+                    <th>系統名稱(Hostname)</th>
                     <td id="hostname"></td>
                 </tr>
             </table>
-            <table class="table1" border="1">
+            <table class="title-table" border="1">
                 <tr>
-                    <th style="width:30%; padding: 10px;">DB 負責人</th>
+                    <th>DB 負責人</th>
                     <td id="db"></td>
                 </tr>
                 <tr>
-                    <th style="width:30%; padding: 10px;">顧問姓名</th>
+                    <th>顧問姓名</th>
                     <td id="consultant"></td>
                 </tr>
                 <tr>
-                    <td id="date" colspan="2" style="padding: 10px; font-size: 22pt;"></td>
+                    <td id="date" colspan="2"></td>
                 </tr>
             </table>
         </div>   
@@ -59,7 +59,7 @@
     <div id="page-2" class="page">
         <div class="upload-border">      
             <input type="file" id="upload" accept="image/*, .pdf">
-            <div id="upload-message" class="unclick">
+            <div id="upload-message" class="unhover">
                 <div>
                     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
                     viewBox="0 0 312.602 312.602" xml:space="preserve">
@@ -78,13 +78,12 @@
                     <p>點擊上傳檔案<br>(PDF、圖片)</p>
                 </div>
             </div>
-            <div id="preview">
-            </div>
+            <div id="preview"></div>
         </div>
     </div>
     <div id="page-3" class="page">
         <div class="normal-border">
-            <table class="table1 margin" border="1">
+            <table class="title-table margin" border="1">
                 <tr class="tr-1">
                     <th>公司名稱</th>
                     <td></td>
@@ -102,7 +101,7 @@
                     <td></td>
                 </tr>
             </table>
-            <table class="table1" border="1">
+            <table class="title-table" border="1">
                 <tr class="tr-5">
                     <th>DB 負責人</th>
                     <td></td>
@@ -112,7 +111,7 @@
                     <td></td>
                 </tr>
                 <tr class="tr-7">
-                    <td colspan="2" style="font-size: 22pt;"></td>
+                    <td colspan="2" id="date" style="font-size: 22pt;"></td>
                 </tr>
             </table>
         </div>   
@@ -120,7 +119,7 @@
     <div id="page-4" class="page">
         <div class="normal-border">
             <h1>系統使用空間</h1>
-            <table class="system table2" border="1">
+            <table class="system content-table" border="1">
                 <tr class="header">
                     <th>Filesystem</th>
                     <th>Size</th>
@@ -136,7 +135,7 @@
         <div class="normal-border">
             <h1>表空間使用報告</h1>
             <span class="unit">單位(MB)</span>
-            <table class="tablespace table2" border="1">
+            <table class="tablespace content-table" border="1">
                 <tr class="header">
                     <th>Tablespace</th>
                     <th>CurrentSize</th>
@@ -151,7 +150,7 @@
     <div id="page-6" class="page">
         <div class="normal-border">
             <h1>RMAN備份</h1>
-            <table class="rman table2" border="1">
+            <table class="rman content-table" border="1">
                 <tr class="header">
                     <th>DATE</th>
                     <th>STATUS</th>
@@ -162,7 +161,7 @@
     <div id="page-7" class="page">
         <div class="normal-border">
             <h1>DataGuard同步機制</h1>
-            <table class="dataguard table2" border="1">
+            <table class="dataguard content-table" border="1">
                 <tr class="header">
                     <th>THREAD#</th>
                     <th>DEST_ID</th>
@@ -177,7 +176,7 @@
         <div class="normal-border">
             <h1>物件狀態異常報告</h1>
             <p class="message"></p>
-            <table class="exception table2" border="1">
+            <table class="exception content-table" border="1">
                 <tr class="header">
                     <th>Owner</th>
                     <th>Object Name</th>
@@ -190,7 +189,7 @@
     <div id="page-9" class="page">
         <div class="normal-border">
             <h2>效能分析說明</h2>
-            <table class="effect table2" border="1">
+            <table class="effect content-table" border="1">
                 <tr class="header">
                     <th>項目</th>
                     <th>數值</th>
@@ -201,7 +200,7 @@
             <span>1.若連線數明顯發生成長或區間差距過大，代表資料庫系統可能存在效能問題(如:資料鎖定 Lock wait)，目前連線數差異區間小，表示資料庫運作穩定。</span><br><br>
             <span>2.根據官方文件目前 Buffer Hit%符合原廠建議值，無須調整。</span>
             <h2>TOP SQL-請查看Elapsed Time Exec(s)執行較久的語法</h2>
-            <table class="sql table2" border="1">
+            <table class="sql content-table" border="1">
                 <tr class="header">
                     <th>Elapsed Time(s)</th>
                     <th>Execution</th>
@@ -214,233 +213,236 @@
     </div>
     <div id="page-10" class="page">
         <div class="normal-border">
-            <h1>總結</h1>
-            <span>資料庫問題彙總與上一期比較</span>
-            <table class="comparison table2" border="1">
-                <tr class="header comTitle">
-                    <th></th>
-                </tr>
-                <tr class="header">
-                    <th style="width:15%">系統名稱</th>
-                    <th colspan="2">物件狀態</th>
-                    <th colspan="2">Dead Lock</th>
-                    <th colspan="2">備份狀態</th>
-                    <th colspan="2">Tablespace狀態</th>
-                </tr>
-                <tr class="content">
-                    <td class="event"></td>
-                    <td>
-                        <input class="object1 input" list="List">
-                        <datalist id="List">
-                            <option value="正常">  
-                            <option value="異常">
-                        </datalist>
-                    </td>
-                    <td>
-                        <input class="object2 input" list="List">
-                        <datalist id="List">
-                            <option value="正常">  
-                            <option value="異常">
-                        </datalist>
-                    </td>
-                    <td>
-                        <input class="lock1 input" list="List">
-                        <datalist id="List">
-                            <option value="正常">  
-                            <option value="異常">
-                        </datalist>
-                    </td>
-                    <td>
-                        <input class="lock2 input" list="List">
-                        <datalist id="List">
-                            <option value="正常">  
-                            <option value="異常">
-                        </datalist>
-                    </td>
-                    <td>
-                        <input class="copy1 input" list="List">
-                        <datalist id="List">
-                            <option value="正常">  
-                            <option value="異常">
-                        </datalist>
-                    </td>
-                    <td>
-                        <input class="copy2 input" list="List" >
-                        <datalist id="List">
-                            <option value="正常">  
-                            <option value="異常">
-                        </datalist>
-                    </td>
-                    <td>
-                        <input class="space1 input" list="List">
-                        <datalist id="List">
-                            <option value="正常">  
-                            <option value="異常">
-                        </datalist>
-                    </td>
-                    <td>
-                        <input class="space2 input" list="List">
-                        <datalist id="List">
-                            <option value="正常">
-                            <option value="異常">
-                        </datalist>
-                    </td>
-                </tr>
-            </table>
-            <br><span>現況與建議事項</span>
-            <table class="suggestion table2" border="1">
-                <tr class="header">
-                    <th>項目</th>
-                    <th style="width:30%">狀況</th>
-                </tr>
-                <tr>
-                    <td>空間配置</td>
-                    <td>
-                        <input class="s1 input" list="List">
-                        <datalist id="List">
-                            <option value="正常">  
-                            <option value="異常">
-                        </datalist>
-                    </td>
-                </tr>
-                <tr>
-                    <td>資料庫備份、回復機制</td>
-                    <td>
-                        <input class="s2 input" list="List">
-                        <datalist id="List">
-                            <option value="正常">  
-                            <option value="異常">
-                        </datalist>
-                    </td>
-                </tr>
-                <tr>
-                    <td>記憶體效能與效能相關參數設置</td>
-                    <td>
-                        <input class="s3 input" list="List">
-                        <datalist id="List">
-                            <option value="正常">  
-                            <option value="異常">
-                        </datalist>
-                    </td>
-                </tr>
-                <tr>
-                    <td>控制檔配置</td>
-                    <td>
-                        <input class="s4 input" list="List">
-                        <datalist id="List">
-                            <option value="正常">  
-                            <option value="異常">
-                        </datalist>
-                    </td>
-                </tr>
-                <tr>
-                    <td>重作日誌設定</td>
-                    <td>
-                        <input class="s5 input" list="List">
-                        <datalist id="List">
-                            <option value="正常">  
-                            <option value="異常">
-                        </datalist>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Archive log file</td>
-                    <td>
-                        <input class="s6 input" list="List">
-                        <datalist id="List">
-                            <option value="正常">  
-                            <option value="異常">
-                        </datalist>
-                    </td>
-                </tr>
-                <tr>
-                    <td>剩餘空間</td>
-                    <td>
-                        <input class="s7 input" list="List">
-                        <datalist id="List">
-                            <option value="正常">  
-                            <option value="異常">
-                        </datalist>
-                    </td>
-                </tr>
-                <tr>
-                    <td>暫存空間設定</td>
-                    <td>
-                        <input class="s8 input" list="List">
-                        <datalist id="List">
-                            <option value="正常">  
-                            <option value="異常">
-                        </datalist>
-                    </td>
-                </tr>
-                <tr>
-                    <td>表格與索引分析狀況</td>
-                    <td>
-                        <input class="s9 input" list="List">
-                        <datalist id="List">
-                            <option value="正常">  
-                            <option value="異常">
-                        </datalist>
-                    </td>
-                </tr>
-                <tr>
-                    <td>物件狀態</td>
-                    <td>
-                        <input class="s10 input" list="List">
-                        <datalist id="List">
-                            <option value="正常">  
-                            <option value="異常">
-                        </datalist>
-                    </td>
-                </tr>
-                <tr>
-                    <td>資料庫內定期作業</td>
-                    <td>
-                        <input class="s11 input" list="List">
-                        <datalist id="List">
-                            <option value="正常">  
-                            <option value="異常">
-                        </datalist>
-                    </td>
-                </tr>
-                <tr>
-                    <td>權限設定</td>
-                    <td>
-                        <input class="s12 input" list="List">
-                        <datalist id="List">
-                            <option value="正常">  
-                            <option value="異常">
-                        </datalist>
-                    </td>
-                </tr>
-                <tr>
-                    <td>SQL與相關Log file</td>
-                    <td>
-                        <input class="s13 input" list="List">
-                        <datalist id="List">
-                            <option value="正常">  
-                            <option value="異常">
-                        </datalist>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Alert log error</td>
-                    <td>
-                        <input class="s14 input" list="List">
-                        <datalist id="List">
-                            <option value="正常">  
-                            <option value="異常">
-                        </datalist>
-                    </td>
-                </tr>
-            </table>
+            <fieldset>
+                <h1>總結</h1>
+                <span>資料庫問題彙總與上一期比較</span>
+                <table class="comparison content-table" border="1">
+                    <tr class="header comTitle">
+                        <th></th>
+                    </tr>
+                    <tr class="header">
+                        <th>系統名稱</th>
+                        <th colspan="2">物件狀態</th>
+                        <th colspan="2">Dead Lock</th>
+                        <th colspan="2">備份狀態</th>
+                        <th colspan="2">Tablespace狀態</th>
+                    </tr>
+                    <tr class="content">
+                        <td class="event"></td>
+                        <td>
+                            <input class="object1" onclick="inputClick(event)">
+                            <datalist role="listbox">
+                                <option value="正常">正常</option>
+                                <option value="異常">異常</option>
+                            </datalist>
+                        </td>
+                        <td>
+                            <input class="object2" onclick="inputClick(event)">
+                            <datalist role="listbox">
+                                <option value="正常">正常</option>
+                                <option value="異常">異常</option>
+                            </datalist>
+                        </td>
+                        <td>
+                            <input class="lock1" onclick="inputClick(event)">
+                            <datalist role="listbox">
+                                <option value="正常">正常</option>
+                                <option value="異常">異常</option>
+                            </datalist>
+                        </td>
+                        <td>
+                            <input class="lock2" onclick="inputClick(event)">
+                            <datalist role="listbox">
+                                <option value="正常">正常</option>  
+                                <option value="異常">異常</option>
+                            </datalist>
+                        </td>
+                        <td>
+                            <input class="copy1" onclick="inputClick(event)">
+                            <datalist role="listbox">
+                                <option value="正常">正常</option>  
+                                <option value="異常">異常</option>
+                            </datalist>
+                        </td>
+                        <td>
+                            <input class="copy2" onclick="inputClick(event)">
+                            <datalist role="listbox">
+                                <option value="正常">正常</option>  
+                                <option value="異常">異常</option>
+                            </datalist>
+                        </td>
+                        <td>
+                            <input class="space1" onclick="inputClick(event)">
+                            <datalist role="listbox">
+                                <option value="正常">正常</option>  
+                                <option value="異常">異常</option>
+                            </datalist>
+                        </td>
+                        <td>
+                            <input class="space2" onclick="inputClick(event)">
+                            <datalist role="listbox">
+                                <option value="正常">正常</option>
+                                <option value="異常">異常</option>
+                            </datalist>
+                        </td>
+                    </tr>
+                </table>
+                <br><span>現況與建議事項</span>
+                <table class="suggestion content-table" border="1">
+                    <tr class="header">
+                        <th>項目</th>
+                        <th style="width:30%">狀況</th>
+                    </tr>
+                    <tr>
+                        <td>空間配置</td>
+                        <td>
+                            <input class="s1" onclick="inputClick(event)">
+                            <datalist role="listbox">
+                                <option value="正常">正常</option>
+                                <option value="異常">異常</option>
+                            </datalist>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>資料庫備份、回復機制</td>
+                        <td>
+                            <input class="s2" onclick="inputClick(event)">
+                            <datalist role="listbox">
+                                <option value="正常">正常</option>
+                                <option value="異常">異常</option>
+                            </datalist>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>記憶體效能與效能相關參數設置</td>
+                        <td>
+                            <input class="s3" onclick="inputClick(event)">
+                            <datalist role="listbox">
+                                <option value="正常">正常</option>
+                                <option value="異常">異常</option>
+                            </datalist>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>控制檔配置</td>
+                        <td>
+                            <input class="s4" onclick="inputClick(event)">
+                            <datalist role="listbox">
+                                <option value="正常">正常</option>
+                                <option value="異常">異常</option>
+                            </datalist>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>重作日誌設定</td>
+                        <td>
+                            <input class="s5" onclick="inputClick(event)">
+                            <datalist role="listbox">
+                                <option value="正常">正常</option>
+                                <option value="異常">異常</option>
+                            </datalist>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Archive log file</td>
+                        <td>
+                            <input class="s6" onclick="inputClick(event)">
+                            <datalist role="listbox">
+                                <option value="正常">正常</option>
+                                <option value="異常">異常</option>
+                            </datalist>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>剩餘空間</td>
+                        <td>
+                            <input class="s7" onclick="inputClick(event)">
+                            <datalist role="listbox">
+                                <option value="正常">正常</option>
+                                <option value="異常">異常</option>
+                            </datalist>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>暫存空間設定</td>
+                        <td>
+                            <input class="s8" onclick="inputClick(event)">
+                            <datalist role="listbox">
+                                <option value="正常">正常</option>
+                                <option value="異常">異常</option>
+                            </datalist>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>表格與索引分析狀況</td>
+                        <td>
+                            <input class="s9" onclick="inputClick(event)">
+                            <datalist role="listbox">
+                                <option value="正常">正常</option>
+                                <option value="異常">異常</option>
+                            </datalist>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>物件狀態</td>
+                        <td>
+                            <input class="s10" onclick="inputClick(event)">
+                            <datalist role="listbox">
+                                <option value="正常">正常</option>
+                                <option value="異常">異常</option>
+                            </datalist>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>資料庫內定期作業</td>
+                        <td>
+                            <input class="s11" onclick="inputClick(event)">
+                            <datalist role="listbox">
+                                <option value="正常">正常</option>
+                                <option value="異常">異常</option>
+                            </datalist>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>權限設定</td>
+                        <td>
+                            <input class="s12" onclick="inputClick(event)">
+                            <datalist role="listbox">
+                                <option value="正常">正常</option>
+                                <option value="異常">異常</option>
+                            </datalist>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>SQL與相關Log file</td>
+                        <td>
+                            <input class="s13" onclick="inputClick(event)">
+                            <datalist role="listbox">
+                                <option value="正常">正常</option>
+                                <option value="異常">異常</option>
+                            </datalist>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Alert log error</td>
+                        <td>
+                            <input class="s14" onclick="inputClick(event)">
+                            <datalist role="listbox">
+                                <option value="正常">正常</option>
+                                <option value="異常">異常</option>
+                            </datalist>
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
         </div>
     </div>
 </body>
+<script src="./js/copy_pages.js"></script>
 <script src="./js/first_page.js"></script>
 <script src="./js/edit.js"></script>
 <script src="./js/upload.js"></script>
 <script src="./js/print.js"></script>
-<script src="./js/copy_pages.js"></script>
 <script src="./js/export.js"></script>
+<script src="./js/input.js"></script>
 </html>

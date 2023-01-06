@@ -22,7 +22,23 @@ body{
 .upload-border{
   margin-top: 0.5cm;
   margin-right: auto;
-  margin-left: 0.5cm;
+  margin-left: auto;
+  
+  #upload, #upload-message{
+    display: none;
+  }
+
+  p{
+    font-size: 40pt;
+    text-align: center;
+  }
+
+  #preview {
+    img, canvas{
+      height: 100%;
+      width: 100%;
+    }
+  }
 }
 
 table{
@@ -31,44 +47,42 @@ table{
   border-collapse:collapse;
 }
 
-.table1{
+.title-table{
   font-size: 20px; 
   width: 70%;
   border: 3px solid #000;
   text-align: center;
+
+  tr{
+    th{
+      width:30%; 
+      padding: 10px; 
+      text-align:center;
+    }
+    #date{
+      padding: 10px; 
+      font-size: 32px;
+    }
+  }
 }
 
-.table2{
-  margin-right: auto;
-  margin-left: auto;
+.content-table{
   width: 100%;
   border: 2px solid #000;
+
+  .header{
+    background-color:rgb(71, 124, 184) !important;
+    color: white;
+    text-align: center;
+  }
 }
 
 .margin{
   margin-bottom: 150px;
 }
 
-.header{
-  background-color:rgb(71, 124, 184) !important;
-  color: white;
-  text-align: center;
-}
-
 .unit{
   margin-left: 75%;
-}
-
-h1{
-  font-size: 22pt;
-  font-style: italic;
-  text-decoration: underline double;
-}
-
-h2{
-  font-size: 20pt;
-  font-style: italic;
-  text-decoration: underline double;
 }
 
 .text{
@@ -86,6 +100,40 @@ h2{
   top: 1px;
 }
 
+h1{
+  font-size: 20pt;
+  font-style: italic;
+  text-decoration: underline double;
+}
+
+h2{
+  font-size: 18pt;
+  font-style: italic;
+  text-decoration: underline double;
+}
+
 .btnBlock{
   display: none;
+}
+
+.unhover{
+  border: 5px #c5d3eb dotted;
+  div{
+    margin-top: 250px;
+    p{
+      color:#c5d3eb;
+    }
+    svg{
+      height: 150px;
+      width: 150px;
+      path{
+        fill:#c5d3eb;
+      }
+    }
+  }
+}
+
+fieldset{
+  padding: 0;
+  border: none;
 }

@@ -18,61 +18,68 @@ table {
   margin-left: 1cm;
   margin-right: 1cm;
 }
-.normal-border .table1 {
-  margin-right: auto;
-  margin-left: auto;
+.normal-border .title-table {
   font-size: 20px;
   width: 80%;
   border: 3px solid #000;
   text-align: center;
   border-collapse: collapse;
 }
-.normal-border .table1 tr th {
+.normal-border .title-table tr th {
   width: 30%;
   padding: 10px;
   text-align: center;
 }
-.normal-border .table2 {
+.normal-border .title-table tr #date {
+  padding: 10px;
+  font-size: 32px;
+}
+.normal-border .content-table {
   width: 100%;
-  border: 2px solid #000;
+  border: 2px solid #000000;
   border-collapse: collapse;
+}
+.normal-border .content-table .header {
+  background-color: #477cb8 !important;
+  color: white;
+  text-align: center;
 }
 .normal-border .margin {
   margin-bottom: 150px;
 }
 
-.unclick {
-  border: 5px #756f6f dotted;
+.unhover {
+  border: 5px #A9A9A9 dotted;
 }
-.unclick div {
+.unhover div {
   margin-top: 250px;
 }
-.unclick div p {
-  color: #756f6f;
+.unhover div p {
+  color: #A9A9A9;
 }
-.unclick div svg {
-  height: 100px;
-  width: 100px;
+.unhover div svg {
+  height: 150px;
+  width: 150px;
 }
-.unclick div svg path {
-  fill: #756f6f;
+.unhover div svg path {
+  fill: #A9A9A9;
 }
 
-.click {
-  border: 5px #336ba7 dotted;
+.hover {
+  border: 5px #477cb8 dotted;
 }
-.click div {
+.hover div {
   margin-top: 250px;
 }
-.click div p {
-  color: #336ba7;
+.hover div p {
+  color: #477cb8;
 }
-.click div svg {
-  height: 100px;
-  width: 100px;
+.hover div svg {
+  height: 150px;
+  width: 150px;
 }
-.click div svg path {
-  fill: #336ba7;
+.hover div svg path {
+  fill: #477cb8;
 }
 
 .upload-border {
@@ -82,30 +89,20 @@ table {
   position: absolute;
   opacity: 0;
   background-color: #ffffff;
-  height: 1047.41px;
+  height: 1048px;
   width: 718.4094488189px;
 }
 .upload-border #upload-message {
   display: block;
-  align-items: center;
-  justify-content: center;
   text-align: center;
   font-size: 50px;
   border-radius: 10px;
-  height: 1039.41px;
+  height: 1040px;
   width: 710.4094488189px;
-  height: 1047.41px;
-  width: 718.4094488189px;
 }
 .upload-border #preview img, .upload-border #preview canvas {
   height: 100%;
   width: 100%;
-}
-
-.header {
-  background-color: rgb(71, 124, 184) !important;
-  color: white;
-  text-align: center;
 }
 
 .unit {
@@ -122,11 +119,6 @@ h2 {
   font-size: 18pt;
   font-style: italic;
   text-decoration: underline double;
-}
-
-.input {
-  width: calc(100% - 8px);
-  font-size: 15px;
 }
 
 .btnBlock {
@@ -156,4 +148,39 @@ h2 {
   height: calc(100% - 2px);
   position: absolute;
   top: 1px;
+}
+
+fieldset {
+  padding: 0;
+  border: none;
+}
+fieldset td {
+  position: relative;
+}
+fieldset td input {
+  outline: none;
+  padding: 1px;
+  border: 0;
+  height: 100%;
+  width: calc(100% - 2px);
+  font-size: 15px;
+}
+fieldset td option {
+  padding-left: 2px;
+  margin-bottom: 1px;
+  font-size: 13px;
+  cursor: pointer;
+  color: #0c2750;
+}
+fieldset td option:hover, fieldset td .active {
+  background-color: #89b9e9;
+}
+fieldset td datalist {
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  position: absolute;
+  top: 105%;
+  left: 0%;
+  background-color: #d1e0ef;
+  width: 100%;
+  z-index: 1;
 }/*# sourceMappingURL=style.css.map */

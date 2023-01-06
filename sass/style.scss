@@ -1,175 +1,214 @@
 $page-height: 1123px;
 $page-width: 794px;
-$preview-height: calc($page-height - 75.59px);
+$preview-height: calc($page-height - 75px);
 $preview-width: calc($page-width - 2cm);
 
+$blue: #477cb8;
+$gray: #A9A9A9;
+
 .page{
-  width: $page-width;
-  height: $page-height;
-  margin-bottom: 10px;
-  margin-right: auto;
-  margin-left: auto;
-  border: 1px solid #000;
+    width: $page-width;
+    height: $page-height;
+    margin-bottom: 10px;
+    margin-right: auto;
+    margin-left: auto;
+    border: 1px solid #000;
 }
 
 table{
-  margin-right: auto;
-  margin-left: auto;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 .normal-border{
-  margin-top: 2cm;
-  margin-bottom: 2cm;
-  margin-left: 1cm;
-  margin-right: 1cm;
+    margin-top: 2cm;
+    margin-bottom: 2cm;
+    margin-left: 1cm;
+    margin-right: 1cm;
 
-  .table1{
-    margin-right: auto;
-    margin-left: auto;
-    font-size: 20px; 
-    width: 80%;
-    border: 3px solid #000;
-    text-align: center;
-    border-collapse:collapse;
+    .title-table{
+        font-size: 20px; 
+        width: 80%;
+        border: 3px solid #000;
+        text-align: center;
+        border-collapse:collapse;
 
-    tr{
-      th{
-        width:30%; 
-        padding: 10px; 
-        text-align:center;
-      }
+        tr{
+            th{
+                width:30%; 
+                padding: 10px; 
+                text-align:center;
+            }
+            #date{
+                padding: 10px; 
+                font-size: 32px;
+                }
+        }
     }
-  }
 
-  .table2{
-    width: 100%;
-    border: 2px solid #000;
-    border-collapse: collapse;
-  }
+    .content-table{
+        width: 100%;
+        border: 2px solid #000000;
+        border-collapse: collapse;
+        
+        .header{
+            background-color: $blue !important;
+            color: white;
+            text-align: center;
+        }
+    }
 
-  .margin{
-    margin-bottom: 150px;
-  }
+    .margin{
+        margin-bottom: 150px;
+    }
 }
 
-.unclick{
-  border: 5px #756f6f dotted;
-  div{
-    margin-top: 250px;
-    p{
-      color:#756f6f;
+.unhover{
+    border: 5px $gray dotted;
+    div{
+        margin-top: 250px;
+        p{
+            color: $gray;
+        }
+        svg{
+            height: 150px;
+            width: 150px;
+            path{
+                fill: $gray;
+            }
+        }
     }
-    svg{
-      height: 100px;
-      width: 100px;
-      path{
-        fill:#756f6f;
-      }
-    }
-  }
 }
 
-.click{
-  border: 5px #336ba7 dotted;
-  div{
-    margin-top: 250px;
-    p{
-      color:#336ba7;
+.hover{
+    border: 5px $blue dotted;
+
+    div{
+        margin-top: 250px;
+        p{
+        color: $blue;
+        }
+        svg{
+            height: 150px;
+            width: 150px;
+            path{
+                fill: $blue;
+            }
+        }
     }
-    svg{
-      height: 100px;
-      width: 100px;
-      path{
-        fill:#336ba7;
-      }
-    }
-  }
 }
 
 .upload-border{
-  margin: 1cm;
-  #upload{
-    position: absolute;
-    opacity: 0;
-    background-color: #ffffff;
-    height: $preview-height;
-    width: $preview-width;
-  }
-
-  #upload-message{
-    display: block;
-    align-items : center;
-    justify-content: center;
-    text-align: center;
-    font-size: 50px;
-    border-radius: 10px;
-    height: calc($preview-height - 8px);
-    width: calc($preview-width - 8px);
-    height: $preview-height;
-    width: $preview-width;
-  }
-
-  #preview {
-    img, canvas{
-      height: 100%;
-      width: 100%;
+    margin: 1cm;
+    #upload{
+        position: absolute;
+        opacity: 0;
+        background-color: #ffffff;
+        height: $preview-height;
+        width: $preview-width;
     }
-  }
+
+    #upload-message{
+        display: block;
+        text-align: center;
+        font-size: 50px;
+        border-radius: 10px;
+        height: calc($preview-height - 8px);
+        width: calc($preview-width - 8px);
+    }
+
+    #preview {
+        img, canvas{
+            height: 100%;
+            width: 100%;
+        }
+    }
 }
 
-.header{
-  background-color:rgb(71, 124, 184) !important;
-  color: white;
-  text-align: center;
-}
+    .unit{
+    margin-left: 74%;
+    }
 
-.unit{
-  margin-left: 74%;
-}
+    h1{
+    font-size: 20pt;
+    font-style: italic;
+    text-decoration: underline double;
+    }
 
-h1{
-  font-size: 20pt;
-  font-style: italic;
-  text-decoration: underline double;
-}
+    h2{
+        font-size: 18pt;
+        font-style: italic;
+        text-decoration: underline double;
+    }
 
-h2{
-  font-size: 18pt;
-  font-style: italic;
-  text-decoration: underline double;
-}
+    .btnBlock{
+        width: 200px;
+        position: fixed;
+        right: 3%;
+        bottom: 3%;
+        z-index: 1;
 
-.input{
-  width: calc(100% - 8px);
-  font-size: 15px;
-}
-
-.btnBlock{
-  width: 200px;
-  position: fixed;
-  right: 3%;
-  bottom: 3%;
-  z-index: 1;
-
-  button{
-    width: 100%;
-    margin: 10px;
-    font-size: 30px;
-    z-index: -1;
-  }
+    button{
+        width: 100%;
+        margin: 10px;
+        font-size: 30px;
+        z-index: -1;
+    }
 }
 
 .text{
-  text-align: end;
-  position: absolute;
-  width: calc(100% - 2px);
-  top: 1px;
-  right: 1px;
+    text-align: end;
+    position: absolute;
+    width: calc(100% - 2px);
+    top: 1px;
+    right: 1px;
 }
 
 .bar{
-  background-color: rgb(130, 110, 216);
-  height: calc(100% - 2px);
-  position: absolute;
-  top: 1px;
+    background-color: rgb(130, 110, 216);
+    height: calc(100% - 2px);
+    position: absolute;
+    top: 1px;
+}
+
+fieldset{
+    padding: 0;
+    border: none;
+
+    td{
+        position: relative;
+
+        input{
+            outline: none;
+            padding: 1px;
+            border: 0;
+            height: 100%;
+            width: calc(100% - 2px);
+            font-size: 15px;
+        }
+
+        option{
+            padding-left: 2px;
+            margin-bottom: 1px;
+            font-size: 13px;
+            cursor: pointer;
+            color:#0c2750;
+        }
+
+        option:hover, .active{
+            background-color: #89b9e9;
+        }
+
+        datalist{
+            box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+            position: absolute;
+            top: 105%;
+            // left: calc(0% - 1px);
+            left: 0%;
+            background-color: #d1e0ef;
+            width: 100%;
+            // border: 1px solid #818d9c;
+            z-index:1;
+        }
+    }
 }

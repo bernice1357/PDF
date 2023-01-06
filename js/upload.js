@@ -4,13 +4,14 @@ var preview = document.getElementById('preview');
 
 input.addEventListener('mouseover', function() {
 	input.style.cursor= 'pointer';
-	message.className = 'click';
+	message.className = 'hover';
 });
 
 input.addEventListener('mouseout', function() {
-	message.className = 'unclick';
+	message.className = 'unhover';
 });
 
+//TODO:奇怪的報錯 blob
 input.addEventListener('change', function() {
 	preview.textContent = '';
 	//選擇檔案時按取消，就會清除之前選擇的檔案
@@ -23,15 +24,16 @@ input.addEventListener('change', function() {
 		message.style.display = 'none';
 		//上傳至瀏覽器的檔案
 		var file = input.files[0];
+
 		//pdf
 		if(file.type.includes('pdf')){
 			//local file 需要使用 FileReader 讀取
 			var fileReader = new FileReader(); 
 			fileReader.onload = function() {
-        var typedarray = new Uint8Array(this.result);
+				var typedarray = new Uint8Array(this.result);
 				
 				//取得要顯示PDF的檔案
-        pdfjsLib.getDocument(typedarray).promise.then(function(pdf) {
+				pdfjsLib.getDocument(typedarray).promise.then(function(pdf) {
 					var pageNumber = 1;
 					pdf.getPage(pageNumber).then( function( page ) {
 						var viewport = page.getViewport(3);

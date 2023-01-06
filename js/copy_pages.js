@@ -177,7 +177,7 @@ for(var item=0; item<len; item++){
 
   //資料庫問題彙總與上一期比較
   //每欄
-  var tdElement = `#page-${(8*(item)+10)} > .normal-border > .comparison > tbody`;
+  var tdElement = `#page-${(8*(item)+10)} > .normal-border > fieldset > .comparison > tbody`;
     
   //標題
   var parent = document.querySelector(tdElement+'> .comTitle');
@@ -193,7 +193,7 @@ for(var item=0; item<len; item++){
 
   //內容
   for(var col in data.comparison){
-    var tdElement = `#page-${(8*(item)+10)} > .normal-border > .comparison > tbody > .content > `;
+    var tdElement = `#page-${(8*(item)+10)} > .normal-border > fieldset > .comparison > tbody > .content > `;
 
     if(col!=="event"){
       $(tdElement+'td > .'+col).val(data.comparison[col]);
@@ -204,7 +204,7 @@ for(var item=0; item<len; item++){
 
   //現況與建議事項
   for(var col in data.suggestion){
-    var tdElement = `#page-${(8*(item)+10)} > .normal-border > .suggestion > tbody > tr > td > .${col}`;
+    var tdElement = `#page-${(8*(item)+10)} > .normal-border > fieldset > .suggestion > tbody > tr > td > .${col}`;
     $(tdElement).val(data.suggestion[col]);
   }
 }
