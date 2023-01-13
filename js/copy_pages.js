@@ -130,42 +130,47 @@ for(var item=0; item<len; item++){
 
   //第九頁
 
-  //效能分析說明
-  if(data.session.length!==0 && data.buffer_hit.length!==0){
-    var tdElement = `#page-${(8*(item)+9)} > .normal-border > .effect > tbody`;
+  //Session 連線數
+  if(data.session.length!==0){
+    var tdElement = `#page-${(8*(item)+9)} > .normal-border > .session > tbody`;
+
     //每列
     for(var row in data.session){
       var parent = document.createElement('tr');
 
-      var child = document.createElement('td');
-      child.innerHTML = 'Session連線數';
-      parent.appendChild(child);
+      //把 Limit_Value 的空白去掉
+      data.session[row]['Limit_Value'] = data.session[row]['Limit_Value'].replace(/^\s*/,"");
 
-      var child = document.createElement('td');
-      child.innerHTML = data.session[row].min+'-'+data.session[row].max;
-      parent.appendChild(child);
+      //要放入表格的數值
+      var list = ['Session連線數', data.session[row]['min'], data.session[row]['max'], data.session[row]['Limit_Value'],'運作正常'];
 
-      var child = document.createElement('td');
-      child.innerHTML = '運作正常';
-      parent.appendChild(child);
+      for(let col in list){
+        var child = document.createElement('td');
+        child.innerHTML = list[col];
+        parent.appendChild(child);
+      }
 
       $(tdElement).append(parent);
     }
-    
+  }else{
+    $(`#page-${8*item+9}`).remove();
+  }
+
+  //Buffer Hit
+  if(data.buffer_hit.length!==0){
+    var tdElement = `#page-${(8*(item)+9)} > .normal-border > .buffer > tbody`;
+    //每列
     for(var row in data.buffer_hit){
       var parent = document.createElement('tr');
 
-      var child = document.createElement('td');
-      child.innerHTML = 'Buffer Hit%';
-      parent.appendChild(child);
+      //要放入表格的數值
+      var list = ['Buffer Hit%', data.buffer_hit[row]['num'], '效能良好'];
 
-      var child = document.createElement('td');
-      child.innerHTML = data.buffer_hit[row].num;
-      parent.appendChild(child);
-
-      var child = document.createElement('td');
-      child.innerHTML = '效能良好';
-      parent.appendChild(child);
+      for(let col in list){
+        var child = document.createElement('td');
+        child.innerHTML = list[col];
+        parent.appendChild(child);
+      }
 
       $(tdElement).append(parent);
     }
